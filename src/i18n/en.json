@@ -511,19 +511,5 @@
     "switch": "Switch to:",
     "own": "Create your own",
     "noInvites": "Inviting and importing people is turned off in the demo."
-  },
-  "verify": {
-    "title": "Enter your code",
-    "body": "We sent a code to {{email}}. It expires in 1 hour.",
-    "bodyRecovery": "We sent a code to {{email}} to reset your password. It expires in 1 hour.",
-    "code": "Verification code",
-    "codeHint": "Check your spam folder if it hasn't arrived.",
-    "submit": "Verify",
-    "resend": "Send a new code",
-    "resendIn": "Send a new code in {{s}}s",
-    "resent": "A new code is on its way.",
-    "wrongEmail": "Use a different email",
-    "invalid": "That code is wrong or has expired. Check it, or send a new one.",
-    "unconfirmed": "Your email isn't verified yet. We sent a new code to {{email}}."
   }
 }

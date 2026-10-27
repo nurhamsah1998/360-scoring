@@ -1,9 +1,9 @@
+import { MailCheck } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthLayout } from '../components/AuthLayout'
 import { Alert, Button, Field } from '../components/ui'
-import { VerifyCode } from '../components/VerifyCode'
 import { currentLang } from '../i18n'
 import { authErrorMessage } from '../lib/errors'
 import { appUrl, supabase } from '../lib/supabase'
@@ -16,7 +16,7 @@ export default function SignUp() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
-  const [codeFor, setCodeFor] = useState<string | null>(null)
+  const [sentTo, setSentTo] = useState<string | null>(null)
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault()
@@ -24,32 +24,33 @@ export default function SignUp() {
     if (password.length < 8) return setError(t('auth.errors.weakPassword'))
     setLoading(true)
     const { data, error } = await supabase.auth.signUp({
-      email: email.trim(),
+      email,
       password,
       options: {
         data: { full_name: fullName.trim(), locale: currentLang() },
         emailRedirectTo: appUrl('/app'),
       },
     })
-    setLoading(false)
-    if (error) return setError(authErrorMessage(t, error))
+    if (error) { setLoading(false); return setError(authErrorMessage(t, error)) }
     // Supabase returns a user with no identities when the email is already registered.
-    if (data.user && data.user.identities?.length === 0) return setError(t('auth.errors.userExists'))
-    // Email confirmation turned off: already signed in.
+    if (data.user && data.user.identities?.length === 0) { setLoading(false); return setError(t('auth.errors.userExists')) }
+    // With email confirmation turned off, Supabase signs the user in straight away.
     if (data.session) return navigate('/onboarding', { replace: true })
-    // Otherwise a code was emailed — ask for it.
-    setCodeFor(email.trim())
+    // Fallback: try signing in directly; this only succeeds when the account needs no confirmation.
+    const { data: signed } = await supabase.auth.signInWithPassword({ email, password })
+    setLoading(false)
+    if (signed.session) return navigate('/onboarding', { replace: true })
+    setSentTo(email)
   }
 
-  if (codeFor) {
+  if (sentTo) {
     return (
-      <AuthLayout title={t('verify.title')}>
-        <VerifyCode
-          email={codeFor}
-          kind="signup"
-          onVerified={() => navigate('/onboarding', { replace: true })}
-          onChangeEmail={() => setCodeFor(null)}
-        />
+      <AuthLayout title={t('auth.checkEmailTitle')}>
+        <div className="flex items-start gap-3">
+          <MailCheck className="mt-0.5 size-6 shrink-0 text-manager" aria-hidden />
+          <p>{t('auth.checkEmailBody', { email: sentTo })}</p>
+        </div>
+        <Link to="/sign-in" className="mt-6 inline-block text-sm font-semibold text-brand underline-offset-2 hover:underline">{t('auth.backToSignIn')}</Link>
       </AuthLayout>
     )
   }

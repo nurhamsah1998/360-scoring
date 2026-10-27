@@ -42,7 +42,7 @@ createRoot(document.getElementById('root')!).render(
               <Route path="/" element={<Landing />} />
               <Route path="/sign-in" element={<GuestOnly><SignIn /></GuestOnly>} />
               <Route path="/sign-up" element={<GuestOnly><SignUp /></GuestOnly>} />
-              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/forgot-password" element={<GuestOnly><ForgotPassword /></GuestOnly>} />
               <Route path="/reset-password" element={<RequireAuth><ResetPassword /></RequireAuth>} />
               <Route path="/accept-invite" element={<AcceptInvite />} />
               <Route path="/onboarding" element={<RequireAuth><CreateOrg /></RequireAuth>} />
