@@ -75,7 +75,7 @@
     "title": "Buat organisasi",
     "body": "Di sinilah tim, template penilaian, dan siklus Anda berada. Anda menjadi admin-nya.",
     "name": "Nama organisasi",
-    "namePlaceholder": "mis. Kampung Inggris LC",
+    "namePlaceholder": "mis. Acme Learning Center",
     "submit": "Buat organisasi"
   },
   "app": {
