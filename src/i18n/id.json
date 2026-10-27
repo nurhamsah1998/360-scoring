@@ -511,5 +511,19 @@
     "switch": "Ganti ke:",
     "own": "Buat milik Anda",
     "noInvites": "Mengundang dan mengimpor anggota dimatikan di demo."
+  },
+  "verify": {
+    "title": "Masukkan kode",
+    "body": "Kami mengirim kode ke {{email}}. Kode berlaku 1 jam.",
+    "bodyRecovery": "Kami mengirim kode ke {{email}} untuk mengatur ulang kata sandi. Kode berlaku 1 jam.",
+    "code": "Kode verifikasi",
+    "codeHint": "Cek folder spam jika belum masuk.",
+    "submit": "Verifikasi",
+    "resend": "Kirim kode baru",
+    "resendIn": "Kirim kode baru dalam {{s}} dtk",
+    "resent": "Kode baru sedang dikirim.",
+    "wrongEmail": "Pakai email lain",
+    "invalid": "Kode salah atau sudah kedaluwarsa. Periksa lagi, atau kirim kode baru.",
+    "unconfirmed": "Email Anda belum terverifikasi. Kami mengirim kode baru ke {{email}}."
   }
 }

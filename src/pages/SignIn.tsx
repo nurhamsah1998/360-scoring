@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthLayout } from '../components/AuthLayout'
 import { Alert, Button, Field } from '../components/ui'
+import { VerifyCode } from '../components/VerifyCode'
 import { authErrorMessage } from '../lib/errors'
 import { supabase } from '../lib/supabase'
 
@@ -14,16 +15,41 @@ export default function SignIn() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+  const [codeFor, setCodeFor] = useState<string | null>(null)
+
+  const goOn = () => {
+    const from = (location.state as { from?: string } | null)?.from
+    navigate(from ?? '/app', { replace: true })
+  }
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setError(null)
     setLoading(true)
-    const { error } = await supabase.auth.signInWithPassword({ email, password })
+    const { error } = await supabase.auth.signInWithPassword({ email: email.trim(), password })
+    if (error && (error as { code?: string }).code === 'email_not_confirmed') {
+      // Account exists but was never verified: send a fresh code and ask for it.
+      await supabase.auth.resend({ type: 'signup', email: email.trim() })
+      setLoading(false)
+      return setCodeFor(email.trim())
+    }
     setLoading(false)
     if (error) return setError(authErrorMessage(t, error))
-    const from = (location.state as { from?: string } | null)?.from
-    navigate(from ?? '/app', { replace: true })
+    goOn()
+  }
+
+  if (codeFor) {
+    return (
+      <AuthLayout title={t('verify.title')}>
+        <VerifyCode
+          email={codeFor}
+          kind="signup"
+          notice={t('verify.unconfirmed', { email: codeFor })}
+          onVerified={goOn}
+          onChangeEmail={() => setCodeFor(null)}
+        />
+      </AuthLayout>
+    )
   }
 
   return (
