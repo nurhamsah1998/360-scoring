@@ -109,7 +109,9 @@
   },
   "nav": {
     "home": "Home",
-    "members": "Members"
+    "members": "Members",
+    "templates": "Templates",
+    "cycles": "Cycles"
   },
   "common": {
     "save": "Save changes",
@@ -226,5 +228,150 @@
     "doneManagerErrors_one": "{{count}} manager couldn't be set",
     "doneManagerErrors_other": "{{count}} managers couldn't be set",
     "back": "Back to members"
+  },
+  "templates": {
+    "title": "Templates",
+    "body": "A template is the list of skills and statements people are rated on. Cycles copy their template when they start, so later edits don't change a running cycle.",
+    "new": "New blank template",
+    "addDefault": "Add the default template",
+    "empty": "No templates yet. Start from the default template or a blank one.",
+    "skills_one": "{{count}} skill",
+    "skills_other": "{{count}} skills",
+    "statements_one": "{{count}} statement",
+    "statements_other": "{{count}} statements",
+    "blankName": "Untitled template",
+    "name": "Template name",
+    "skill": "Skill",
+    "skillName": "Skill name",
+    "skillDescription": "Short description",
+    "statement": "Statement",
+    "addStatement": "Add statement",
+    "addSkill": "Add skill",
+    "newSkill": "New skill",
+    "newStatement": "New statement",
+    "moveUp": "Move up",
+    "moveDown": "Move down",
+    "deleteSkill": "Delete skill",
+    "deleteStatement": "Delete statement",
+    "deleteTemplate": "Delete template",
+    "confirmDelete": "Delete this template? Cycles that already started keep their own copy.",
+    "savedHint": "Changes save when you leave a field.",
+    "scale": "Each statement is rated 1–5, or “Not able to rate”.",
+    "back": "Back to templates"
+  },
+  "stage": {
+    "draft": "Draft",
+    "nomination": "Nominations",
+    "review": "Reviews",
+    "closed": "Closed",
+    "released": "Released"
+  },
+  "cycles": {
+    "title": "Cycles",
+    "body": "A cycle is one round of 360° reviews, from nominating peers to releasing reports.",
+    "new": "New cycle",
+    "createTitle": "Create a cycle",
+    "create": "Create draft",
+    "empty": "No cycles yet.",
+    "emptyMember": "There are no active cycles yet.",
+    "name": "Cycle name",
+    "namePlaceholder": "e.g. Q4 2026 review",
+    "template": "Template",
+    "noTemplate": "Choose a template",
+    "nominationDue": "Nominations due",
+    "reviewDue": "Reviews due",
+    "peerMin": "Minimum peers",
+    "peerMax": "Maximum peers",
+    "participants_one": "{{count}} participant",
+    "participants_other": "{{count}} participants",
+    "due": "Due {{date}}",
+    "back": "Back to cycles",
+    "settings": "Settings",
+    "settingsLocked": "The template and peer limits are fixed once the cycle starts.",
+    "deleteDraft": "Delete draft",
+    "confirmDeleteDraft": "Delete this draft cycle?",
+    "participantsTitle": "Participants",
+    "participantsHelp": "People who will be reviewed. Their manager and direct reports are added as reviewers automatically.",
+    "addEveryone": "Add everyone",
+    "addParticipant": "Add a person",
+    "remove": "Remove",
+    "noParticipants": "No participants yet.",
+    "onlyActive": "Only active members can take part. Invited people appear once they join.",
+    "manager": "Manager",
+    "noManager": "No manager",
+    "progress": "{{done}} of {{total}} reviews submitted",
+    "nomsSummary": "{{approved}} approved · {{pending}} waiting",
+    "manageNoms": "Manage",
+    "next": {
+      "draft": {
+        "title": "Open nominations",
+        "body": "The template is copied, managers and direct reports become reviewers, and each participant can nominate peers.",
+        "action": "Open nominations"
+      },
+      "nomination": {
+        "title": "Start reviews",
+        "body": "Approved peers become reviewers and everyone can start filling in reviews. Nominations still waiting are dropped.",
+        "action": "Start reviews"
+      },
+      "review": {
+        "title": "Close reviews",
+        "body": "No more reviews can be submitted. Admins and managers can see reports.",
+        "action": "Close reviews"
+      },
+      "closed": {
+        "title": "Release reports",
+        "body": "Each participant can see their own report.",
+        "action": "Release reports"
+      },
+      "released": {
+        "title": "Reports released",
+        "body": "This cycle is finished."
+      }
+    },
+    "confirmAdvance": "{{action}}? This can't be undone.",
+    "needs": {
+      "template": "Choose a template",
+      "participants": "Add at least one participant"
+    },
+    "pendingWarning_one": "{{count}} nomination is still waiting for approval.",
+    "pendingWarning_other": "{{count}} nominations are still waiting for approval.",
+    "reviewsSoon": "Review forms arrive in the next update.",
+    "myReviews_one": "You have {{count}} review to complete.",
+    "myReviews_other": "You have {{count}} reviews to complete."
+  },
+  "noms": {
+    "mineTitle": "Your peer reviewers",
+    "mineHelp": "Choose {{min}}–{{max}} colleagues who know your work. Your manager approves the list. Your manager and direct reports already review you.",
+    "mineHelpNoManager": "Choose {{min}}–{{max}} colleagues who know your work. An admin approves the list.",
+    "count": "{{count}} of {{max}} chosen",
+    "belowMin": "Choose at least {{min}}.",
+    "add": "Add",
+    "pick": "Choose a colleague",
+    "withdraw": "Remove",
+    "status": {
+      "pending": "Waiting",
+      "approved": "Approved",
+      "rejected": "Declined",
+      "withdrawn": "Removed"
+    },
+    "approveTitle": "Approve your team's peer reviewers",
+    "approveHelp": "Check that each person picked colleagues who can fairly judge their work.",
+    "approve": "Approve",
+    "reject": "Decline",
+    "nothingPending": "Nothing waiting for you.",
+    "adminTitle": "Peer reviewers for {{name}}",
+    "adminAdd": "Add as admin (approved right away)",
+    "none": "No peers nominated yet.",
+    "closed": "Nominations are closed."
+  },
+  "tasks": {
+    "title": "Your tasks",
+    "nominate": "Nominate peer reviewers for {{cycle}}",
+    "nominateDetail": "{{count}} of at least {{min}} chosen",
+    "approve_one": "Approve {{count}} nomination for {{cycle}}",
+    "approve_other": "Approve {{count}} nominations for {{cycle}}",
+    "review_one": "{{count}} review to complete in {{cycle}}",
+    "review_other": "{{count}} reviews to complete in {{cycle}}",
+    "none": "You're all caught up."
   }
 }

@@ -109,7 +109,9 @@
   },
   "nav": {
     "home": "Beranda",
-    "members": "Anggota"
+    "members": "Anggota",
+    "templates": "Template",
+    "cycles": "Siklus"
   },
   "common": {
     "save": "Simpan perubahan",
@@ -226,5 +228,150 @@
     "doneManagerErrors_one": "{{count}} atasan gagal diatur",
     "doneManagerErrors_other": "{{count}} atasan gagal diatur",
     "back": "Kembali ke anggota"
+  },
+  "templates": {
+    "title": "Template",
+    "body": "Template adalah daftar kompetensi dan pernyataan yang dinilai. Siklus menyalin template saat dimulai, jadi perubahan setelahnya tidak memengaruhi siklus yang sedang berjalan.",
+    "new": "Template kosong baru",
+    "addDefault": "Tambah template bawaan",
+    "empty": "Belum ada template. Mulai dari template bawaan atau template kosong.",
+    "skills_one": "{{count}} kompetensi",
+    "skills_other": "{{count}} kompetensi",
+    "statements_one": "{{count}} pernyataan",
+    "statements_other": "{{count}} pernyataan",
+    "blankName": "Template tanpa judul",
+    "name": "Nama template",
+    "skill": "Kompetensi",
+    "skillName": "Nama kompetensi",
+    "skillDescription": "Deskripsi singkat",
+    "statement": "Pernyataan",
+    "addStatement": "Tambah pernyataan",
+    "addSkill": "Tambah kompetensi",
+    "newSkill": "Kompetensi baru",
+    "newStatement": "Pernyataan baru",
+    "moveUp": "Naikkan",
+    "moveDown": "Turunkan",
+    "deleteSkill": "Hapus kompetensi",
+    "deleteStatement": "Hapus pernyataan",
+    "deleteTemplate": "Hapus template",
+    "confirmDelete": "Hapus template ini? Siklus yang sudah dimulai tetap menyimpan salinannya sendiri.",
+    "savedHint": "Perubahan tersimpan saat Anda meninggalkan kolom.",
+    "scale": "Setiap pernyataan dinilai 1–5, atau “Tidak dapat menilai”.",
+    "back": "Kembali ke template"
+  },
+  "stage": {
+    "draft": "Draf",
+    "nomination": "Nominasi",
+    "review": "Penilaian",
+    "closed": "Ditutup",
+    "released": "Dirilis"
+  },
+  "cycles": {
+    "title": "Siklus",
+    "body": "Siklus adalah satu putaran penilaian 360°, dari nominasi rekan sampai rilis laporan.",
+    "new": "Siklus baru",
+    "createTitle": "Buat siklus",
+    "create": "Buat draf",
+    "empty": "Belum ada siklus.",
+    "emptyMember": "Belum ada siklus yang berjalan.",
+    "name": "Nama siklus",
+    "namePlaceholder": "mis. Penilaian Q4 2026",
+    "template": "Template",
+    "noTemplate": "Pilih template",
+    "nominationDue": "Tenggat nominasi",
+    "reviewDue": "Tenggat penilaian",
+    "peerMin": "Minimal rekan",
+    "peerMax": "Maksimal rekan",
+    "participants_one": "{{count}} peserta",
+    "participants_other": "{{count}} peserta",
+    "due": "Tenggat {{date}}",
+    "back": "Kembali ke siklus",
+    "settings": "Pengaturan",
+    "settingsLocked": "Template dan batas jumlah rekan tidak bisa diubah setelah siklus dimulai.",
+    "deleteDraft": "Hapus draf",
+    "confirmDeleteDraft": "Hapus draf siklus ini?",
+    "participantsTitle": "Peserta",
+    "participantsHelp": "Orang yang akan dinilai. Atasan dan bawahan langsung mereka otomatis menjadi penilai.",
+    "addEveryone": "Tambah semua",
+    "addParticipant": "Tambah orang",
+    "remove": "Hapus",
+    "noParticipants": "Belum ada peserta.",
+    "onlyActive": "Hanya anggota aktif yang bisa ikut. Orang yang masih diundang muncul setelah bergabung.",
+    "manager": "Atasan",
+    "noManager": "Tanpa atasan",
+    "progress": "{{done}} dari {{total}} penilaian terkirim",
+    "nomsSummary": "{{approved}} disetujui · {{pending}} menunggu",
+    "manageNoms": "Kelola",
+    "next": {
+      "draft": {
+        "title": "Buka nominasi",
+        "body": "Template disalin, atasan dan bawahan menjadi penilai, dan setiap peserta bisa menominasikan rekan.",
+        "action": "Buka nominasi"
+      },
+      "nomination": {
+        "title": "Mulai penilaian",
+        "body": "Rekan yang disetujui menjadi penilai dan semua orang bisa mulai mengisi penilaian. Nominasi yang masih menunggu diabaikan.",
+        "action": "Mulai penilaian"
+      },
+      "review": {
+        "title": "Tutup penilaian",
+        "body": "Penilaian baru tidak bisa dikirim lagi. Admin dan atasan bisa melihat laporan.",
+        "action": "Tutup penilaian"
+      },
+      "closed": {
+        "title": "Rilis laporan",
+        "body": "Setiap peserta bisa melihat laporannya sendiri.",
+        "action": "Rilis laporan"
+      },
+      "released": {
+        "title": "Laporan dirilis",
+        "body": "Siklus ini sudah selesai."
+      }
+    },
+    "confirmAdvance": "{{action}}? Langkah ini tidak bisa dibatalkan.",
+    "needs": {
+      "template": "Pilih template",
+      "participants": "Tambahkan minimal satu peserta"
+    },
+    "pendingWarning_one": "{{count}} nominasi masih menunggu persetujuan.",
+    "pendingWarning_other": "{{count}} nominasi masih menunggu persetujuan.",
+    "reviewsSoon": "Form penilaian hadir di update berikutnya.",
+    "myReviews_one": "Ada {{count}} penilaian yang perlu Anda isi.",
+    "myReviews_other": "Ada {{count}} penilaian yang perlu Anda isi."
+  },
+  "noms": {
+    "mineTitle": "Rekan penilai Anda",
+    "mineHelp": "Pilih {{min}}–{{max}} rekan yang mengenal pekerjaan Anda. Atasan Anda akan menyetujui daftarnya. Atasan dan bawahan Anda sudah otomatis menilai.",
+    "mineHelpNoManager": "Pilih {{min}}–{{max}} rekan yang mengenal pekerjaan Anda. Admin akan menyetujui daftarnya.",
+    "count": "{{count}} dari {{max}} dipilih",
+    "belowMin": "Pilih minimal {{min}}.",
+    "add": "Tambah",
+    "pick": "Pilih rekan",
+    "withdraw": "Hapus",
+    "status": {
+      "pending": "Menunggu",
+      "approved": "Disetujui",
+      "rejected": "Ditolak",
+      "withdrawn": "Dihapus"
+    },
+    "approveTitle": "Setujui rekan penilai tim Anda",
+    "approveHelp": "Pastikan setiap orang memilih rekan yang bisa menilai pekerjaannya dengan adil.",
+    "approve": "Setujui",
+    "reject": "Tolak",
+    "nothingPending": "Tidak ada yang menunggu Anda.",
+    "adminTitle": "Rekan penilai untuk {{name}}",
+    "adminAdd": "Tambah sebagai admin (langsung disetujui)",
+    "none": "Belum ada rekan yang dinominasikan.",
+    "closed": "Nominasi sudah ditutup."
+  },
+  "tasks": {
+    "title": "Tugas Anda",
+    "nominate": "Nominasikan rekan penilai untuk {{cycle}}",
+    "nominateDetail": "{{count}} dari minimal {{min}} dipilih",
+    "approve_one": "Setujui {{count}} nominasi untuk {{cycle}}",
+    "approve_other": "Setujui {{count}} nominasi untuk {{cycle}}",
+    "review_one": "{{count}} penilaian perlu diisi di {{cycle}}",
+    "review_other": "{{count}} penilaian perlu diisi di {{cycle}}",
+    "none": "Semua tugas sudah beres."
   }
 }

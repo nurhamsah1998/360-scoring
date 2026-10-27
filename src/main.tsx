@@ -20,6 +20,10 @@ const AppHome = lazy(() => import('./pages/AppHome'))
 const Members = lazy(() => import('./pages/Members'))
 const ImportMembers = lazy(() => import('./pages/ImportMembers'))
 const NotFound = lazy(() => import('./pages/NotFound'))
+const Templates = lazy(() => import('./pages/Templates'))
+const TemplateEditor = lazy(() => import('./pages/TemplateEditor'))
+const Cycles = lazy(() => import('./pages/Cycles'))
+const CycleDetail = lazy(() => import('./pages/CycleDetail'))
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { staleTime: 30_000, retry: 1, refetchOnWindowFocus: false } },
@@ -43,6 +47,10 @@ createRoot(document.getElementById('root')!).render(
                 <Route index element={<AppHome />} />
                 <Route path="members" element={<Members />} />
                 <Route path="members/import" element={<ImportMembers />} />
+                <Route path="templates" element={<Templates />} />
+                <Route path="templates/:id" element={<TemplateEditor />} />
+                <Route path="cycles" element={<Cycles />} />
+                <Route path="cycles/:id" element={<CycleDetail />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>
