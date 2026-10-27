@@ -1,0 +1,74 @@
+{
+  "brand": "360 Scoring",
+  "lang": { "label": "Bahasa", "en": "English", "id": "Bahasa Indonesia" },
+  "landing": {
+    "title": "Satu orang, empat sudut pandang.",
+    "lead": "Kumpulkan penilaian dari atasan, rekan, bawahan, dan orangnya sendiri, lalu bandingkan cara tiap kelompok melihat kompetensi yang sama.",
+    "groups": { "self": "Diri sendiri", "manager": "Atasan", "peer": "Rekan", "report": "Bawahan" },
+    "start": "Buat organisasi",
+    "signIn": "Masuk",
+    "how": "Cara kerja satu siklus",
+    "steps": [
+      { "title": "Persiapan", "body": "Undang tim, atur siapa atasan siapa, dan pilih template pertanyaan." },
+      { "title": "Nominasi", "body": "Setiap orang menominasikan rekan yang akan menilainya. Atasan menyetujui daftarnya." },
+      { "title": "Penilaian", "body": "Penilai memberi skor 1–5 untuk tiap kompetensi dan komentar jika perlu." },
+      { "title": "Rilis", "body": "Laporan menampilkan skor per kelompok. Penilaian rekan dan bawahan tetap anonim." }
+    ],
+    "anonymity": "Skor rekan dan bawahan baru tampil jika minimal tiga orang di kelompok itu sudah mengisi."
+  },
+  "auth": {
+    "email": "Email kerja",
+    "password": "Kata sandi",
+    "passwordHint": "Minimal 8 karakter",
+    "fullName": "Nama lengkap",
+    "signInTitle": "Masuk",
+    "signInSubmit": "Masuk",
+    "signUpTitle": "Buat akun",
+    "signUpSubmit": "Buat akun",
+    "forgot": "Lupa kata sandi?",
+    "noAccount": "Belum punya akun?",
+    "haveAccount": "Sudah punya akun?",
+    "signUpLink": "Buat akun",
+    "signInLink": "Masuk",
+    "checkEmailTitle": "Cek kotak masuk Anda",
+    "checkEmailBody": "Link konfirmasi sudah dikirim ke {{email}}. Buka di perangkat ini untuk menyelesaikan pembuatan akun.",
+    "forgotTitle": "Atur ulang kata sandi",
+    "forgotBody": "Masukkan email Anda, kami kirimkan link untuk membuat kata sandi baru.",
+    "forgotSubmit": "Kirim link",
+    "forgotSent": "Jika ada akun untuk {{email}}, link atur ulang sedang dikirim.",
+    "resetTitle": "Buat kata sandi baru",
+    "resetSubmit": "Simpan kata sandi",
+    "resetDone": "Kata sandi tersimpan. Anda sudah masuk.",
+    "backToSignIn": "Kembali ke halaman masuk",
+    "signOut": "Keluar",
+    "errors": {
+      "invalidCredentials": "Email dan kata sandi tidak cocok. Periksa lalu coba lagi.",
+      "emailNotConfirmed": "Konfirmasi email Anda dulu — buka link yang kami kirim.",
+      "userExists": "Email ini sudah terdaftar. Silakan masuk.",
+      "weakPassword": "Gunakan minimal 8 karakter.",
+      "rateLimit": "Terlalu banyak email terkirim. Tunggu beberapa menit lalu coba lagi.",
+      "generic": "Terjadi kesalahan: {{message}}"
+    }
+  },
+  "onboarding": {
+    "title": "Buat organisasi",
+    "body": "Di sinilah tim, template penilaian, dan siklus Anda berada. Anda menjadi admin-nya.",
+    "name": "Nama organisasi",
+    "namePlaceholder": "mis. Kampung Inggris LC",
+    "submit": "Buat organisasi"
+  },
+  "app": {
+    "orgSwitcher": "Organisasi",
+    "newOrg": "Organisasi baru",
+    "role": { "admin": "Admin", "member": "Anggota" },
+    "welcome": "Halo, {{name}}",
+    "welcomeBody": "Anda berada di {{org}}. Ini langkah berikutnya.",
+    "next": {
+      "members": { "title": "Tambahkan tim", "body": "Undang lewat email atau impor CSV, lalu atur atasan tiap orang." },
+      "template": { "title": "Siapkan pertanyaan", "body": "Mulai dari template bawaan atau tulis kompetensi dan pernyataan sendiri." },
+      "cycle": { "title": "Mulai siklus", "body": "Pilih siapa yang dinilai, atur tenggat, lalu buka nominasi." }
+    },
+    "soon": "Hadir di update berikutnya"
+  },
+  "notFound": { "title": "Halaman tidak ditemukan", "back": "Ke beranda" }
+}

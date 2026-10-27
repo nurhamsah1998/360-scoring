@@ -1,0 +1,74 @@
+{
+  "brand": "360 Scoring",
+  "lang": { "label": "Language", "en": "English", "id": "Bahasa Indonesia" },
+  "landing": {
+    "title": "One person, four points of view.",
+    "lead": "Collect feedback from a manager, peers, direct reports and the person themselves, then compare how each group sees the same skills.",
+    "groups": { "self": "Self", "manager": "Manager", "peer": "Peers", "report": "Direct reports" },
+    "start": "Create your organization",
+    "signIn": "Sign in",
+    "how": "How a cycle works",
+    "steps": [
+      { "title": "Set up", "body": "Invite your team, set who reports to whom, and pick a question template." },
+      { "title": "Nominate", "body": "Everyone nominates peers to review them. Managers approve the list." },
+      { "title": "Review", "body": "Reviewers rate each skill from 1 to 5 and leave optional comments." },
+      { "title": "Release", "body": "Reports show scores by group. Peer and report groups stay anonymous." }
+    ],
+    "anonymity": "Peer and direct-report scores only appear once at least three people in that group have responded."
+  },
+  "auth": {
+    "email": "Work email",
+    "password": "Password",
+    "passwordHint": "At least 8 characters",
+    "fullName": "Full name",
+    "signInTitle": "Sign in",
+    "signInSubmit": "Sign in",
+    "signUpTitle": "Create your account",
+    "signUpSubmit": "Create account",
+    "forgot": "Forgot password?",
+    "noAccount": "No account yet?",
+    "haveAccount": "Already have an account?",
+    "signUpLink": "Create one",
+    "signInLink": "Sign in",
+    "checkEmailTitle": "Check your inbox",
+    "checkEmailBody": "We sent a confirmation link to {{email}}. Open it on this device to finish creating your account.",
+    "forgotTitle": "Reset your password",
+    "forgotBody": "Enter your email and we'll send you a link to choose a new password.",
+    "forgotSubmit": "Send reset link",
+    "forgotSent": "If an account exists for {{email}}, a reset link is on its way.",
+    "resetTitle": "Choose a new password",
+    "resetSubmit": "Save new password",
+    "resetDone": "Password saved. You're signed in.",
+    "backToSignIn": "Back to sign in",
+    "signOut": "Sign out",
+    "errors": {
+      "invalidCredentials": "That email and password don't match. Check them and try again.",
+      "emailNotConfirmed": "Confirm your email first — open the link we sent you.",
+      "userExists": "An account with this email already exists. Sign in instead.",
+      "weakPassword": "Use at least 8 characters.",
+      "rateLimit": "Too many emails sent. Wait a few minutes and try again.",
+      "generic": "Something went wrong: {{message}}"
+    }
+  },
+  "onboarding": {
+    "title": "Create your organization",
+    "body": "This is where your team, review templates and cycles live. You'll be its admin.",
+    "name": "Organization name",
+    "namePlaceholder": "e.g. Acme Learning Center",
+    "submit": "Create organization"
+  },
+  "app": {
+    "orgSwitcher": "Organization",
+    "newOrg": "New organization",
+    "role": { "admin": "Admin", "member": "Member" },
+    "welcome": "Welcome, {{name}}",
+    "welcomeBody": "You're in {{org}}. Here's what comes next.",
+    "next": {
+      "members": { "title": "Add your team", "body": "Invite people by email or import a CSV, and set each person's manager." },
+      "template": { "title": "Prepare questions", "body": "Start from the default template or write your own skills and statements." },
+      "cycle": { "title": "Start a cycle", "body": "Choose who's reviewed, set deadlines, and open nominations." }
+    },
+    "soon": "Coming in the next update"
+  },
+  "notFound": { "title": "Page not found", "back": "Go to home" }
+}
