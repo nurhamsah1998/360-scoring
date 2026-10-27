@@ -111,7 +111,8 @@
     "home": "Beranda",
     "members": "Anggota",
     "templates": "Template",
-    "cycles": "Siklus"
+    "cycles": "Siklus",
+    "reviews": "Penilaian"
   },
   "common": {
     "save": "Simpan perubahan",
@@ -373,5 +374,68 @@
     "review_one": "{{count}} penilaian perlu diisi di {{cycle}}",
     "review_other": "{{count}} penilaian perlu diisi di {{cycle}}",
     "none": "Semua tugas sudah beres."
+  },
+  "reviews": {
+    "title": "Penilaian Anda",
+    "body": "Penilaian yang diminta dari Anda. Jawaban tersimpan otomatis, jadi bisa dilanjutkan nanti.",
+    "todo": "Belum selesai",
+    "done": "Terkirim",
+    "empty": "Tidak ada penilaian untuk Anda saat ini.",
+    "you": "Anda",
+    "rel": {
+      "self": "Penilaian diri",
+      "manager": "Sebagai atasannya",
+      "peer": "Sebagai rekan",
+      "direct_report": "Sebagai bawahannya"
+    },
+    "progress": "{{answered}} dari {{total}} terjawab",
+    "submittedOn": "Dikirim {{date}}",
+    "closed": "Penilaian sudah ditutup",
+    "start": "Mulai",
+    "continue": "Lanjutkan",
+    "view": "Lihat",
+    "back": "Kembali ke penilaian Anda",
+    "selfTitle": "Penilaian diri Anda",
+    "otherTitle": "Nilai {{name}}",
+    "note": {
+      "self": "Ini pandangan Anda sendiri. Di laporan, hasilnya ditampilkan berdampingan dengan penilaian orang lain.",
+      "manager": "Jawaban Anda tampil sebagai pandangan atasan di laporannya.",
+      "anonymous": "Jawaban Anda digabung dengan penilai lain di kelompok yang sama dan baru tampil jika minimal {{min}} orang sudah mengisi. Nama Anda tidak pernah ditampilkan."
+    },
+    "scaleTitle": "Skala penilaian",
+    "scale": {
+      "1": "Sangat kurang",
+      "2": "Kurang",
+      "3": "Cukup",
+      "4": "Baik",
+      "5": "Sangat baik"
+    },
+    "na": "N/A",
+    "naLong": "Tidak dapat menilai",
+    "comment": "Komentar",
+    "commentPlaceholder": "Opsional: contoh, kelebihan, atau saran",
+    "saving": "Menyimpan…",
+    "saved": "Tersimpan",
+    "saveFailed": "Gagal menyimpan — periksa koneksi Anda",
+    "submit": "Kirim penilaian",
+    "confirmSubmit": "Kirim penilaian ini? Setelah dikirim tidak bisa diubah.",
+    "submitted": "Penilaian terkirim. Terima kasih!",
+    "readOnly": "Penilaian ini sudah dikirim dan tidak bisa diubah.",
+    "readOnlyClosed": "Penilaian untuk siklus ini sudah ditutup.",
+    "remaining_one": "{{count}} pernyataan lagi",
+    "remaining_other": "{{count}} pernyataan lagi"
+  },
+  "notifications": {
+    "title": "Notifikasi",
+    "empty": "Belum ada notifikasi.",
+    "markAll": "Tandai semua sudah dibaca",
+    "unread_one": "{{count}} notifikasi belum dibaca",
+    "unread_other": "{{count}} notifikasi belum dibaca",
+    "nomination_open": "Nominasi untuk {{cycle}} sudah dibuka. Pilih rekan penilai Anda.",
+    "nomination_pending": "{{reviewee}} menominasikan rekan penilai di {{cycle}}.",
+    "nomination_decided_approved": "Nominasi {{peer}} Anda disetujui ({{cycle}}).",
+    "nomination_decided_rejected": "Nominasi {{peer}} Anda ditolak ({{cycle}}).",
+    "review_open": "Penilaian untuk {{cycle}} sudah dibuka.",
+    "report_released": "Laporan Anda untuk {{cycle}} sudah tersedia."
   }
 }

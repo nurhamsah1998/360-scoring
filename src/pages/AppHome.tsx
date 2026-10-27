@@ -51,7 +51,7 @@ export default function AppHome() {
               const S = TASK_STYLE[task.kind]
               return (
                 <li key={task.kind + task.cycleId}>
-                  <Link to={`/app/cycles/${task.cycleId}`} className="flex items-center gap-3 overflow-hidden rounded-xl border border-line bg-card pr-4 hover:border-ink/30">
+                  <Link to={task.kind === 'review' ? '/app/reviews' : `/app/cycles/${task.cycleId}`} className="flex items-center gap-3 overflow-hidden rounded-xl border border-line bg-card pr-4 hover:border-ink/30">
                     <span className={clsx('w-1.5 self-stretch', S.bar)} aria-hidden />
                     <S.icon className="size-5 shrink-0 text-muted" aria-hidden />
                     <span className="min-w-0 flex-1 py-3.5">

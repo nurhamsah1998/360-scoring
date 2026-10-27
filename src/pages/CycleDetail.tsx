@@ -46,7 +46,7 @@ export default function CycleDetail() {
         {cycle.status === 'nomination' && <MyNominations {...common} meId={membershipId} />}
         {cycle.status === 'nomination' && <ManagerApprovals {...common} meId={membershipId} />}
         {cycle.status === 'review' && myPending > 0 && (
-          <Alert tone="info">{t('cycles.myReviews', { count: myPending })} {t('cycles.reviewsSoon')}</Alert>
+          <Alert tone="info">{t('cycles.myReviews', { count: myPending })} <Link to="/app/reviews" className="font-semibold text-brand underline-offset-2 hover:underline">{t('nav.reviews')} →</Link></Alert>
         )}
         {isAdmin && <AdminSections {...common} assignments={assignments ?? []} />}
       </div>

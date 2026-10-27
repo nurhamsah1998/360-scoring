@@ -111,7 +111,8 @@
     "home": "Home",
     "members": "Members",
     "templates": "Templates",
-    "cycles": "Cycles"
+    "cycles": "Cycles",
+    "reviews": "Reviews"
   },
   "common": {
     "save": "Save changes",
@@ -373,5 +374,68 @@
     "review_one": "{{count}} review to complete in {{cycle}}",
     "review_other": "{{count}} reviews to complete in {{cycle}}",
     "none": "You're all caught up."
+  },
+  "reviews": {
+    "title": "Your reviews",
+    "body": "Reviews you've been asked to give. Your answers save as you go, and you can finish later.",
+    "todo": "To do",
+    "done": "Submitted",
+    "empty": "No reviews for you right now.",
+    "you": "You",
+    "rel": {
+      "self": "Self-review",
+      "manager": "As their manager",
+      "peer": "As a peer",
+      "direct_report": "As their direct report"
+    },
+    "progress": "{{answered}} of {{total}} answered",
+    "submittedOn": "Submitted {{date}}",
+    "closed": "Reviews are closed",
+    "start": "Start",
+    "continue": "Continue",
+    "view": "View",
+    "back": "Back to your reviews",
+    "selfTitle": "Your self-review",
+    "otherTitle": "Review {{name}}",
+    "note": {
+      "self": "This is your own view. In your report it's shown next to how others see you.",
+      "manager": "Your answers appear as the manager's view in their report.",
+      "anonymous": "Your answers are combined with others in the same group and only appear once at least {{min}} people have answered. Your name is never shown."
+    },
+    "scaleTitle": "Rating scale",
+    "scale": {
+      "1": "Very poor",
+      "2": "Poor",
+      "3": "Fair",
+      "4": "Good",
+      "5": "Very good"
+    },
+    "na": "N/A",
+    "naLong": "Not able to rate",
+    "comment": "Comment",
+    "commentPlaceholder": "Optional: an example, a strength, or a suggestion",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "saveFailed": "Couldn't save — check your connection",
+    "submit": "Submit review",
+    "confirmSubmit": "Submit this review? You can't change it afterwards.",
+    "submitted": "Review submitted. Thank you!",
+    "readOnly": "This review was submitted and can't be changed.",
+    "readOnlyClosed": "Reviews for this cycle are closed.",
+    "remaining_one": "{{count}} statement left",
+    "remaining_other": "{{count}} statements left"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "empty": "No notifications yet.",
+    "markAll": "Mark all as read",
+    "unread_one": "{{count}} unread notification",
+    "unread_other": "{{count}} unread notifications",
+    "nomination_open": "Nominations are open for {{cycle}}. Choose your peer reviewers.",
+    "nomination_pending": "{{reviewee}} nominated a peer reviewer in {{cycle}}.",
+    "nomination_decided_approved": "Your nomination of {{peer}} was approved ({{cycle}}).",
+    "nomination_decided_rejected": "Your nomination of {{peer}} was declined ({{cycle}}).",
+    "review_open": "Reviews are open for {{cycle}}.",
+    "report_released": "Your report for {{cycle}} is ready."
   }
 }

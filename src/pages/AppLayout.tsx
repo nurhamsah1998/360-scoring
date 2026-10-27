@@ -1,10 +1,11 @@
 import clsx from 'clsx'
-import { CalendarRange, Home, ListChecks, LogOut, Plus, Users } from 'lucide-react'
+import { CalendarRange, ClipboardCheck, Home, ListChecks, LogOut, Plus, Users } from 'lucide-react'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, Navigate, NavLink, Outlet } from 'react-router-dom'
 import { Logo } from '../components/Dial'
 import { LanguageSwitch } from '../components/LanguageSwitch'
+import { NotificationBell } from '../components/NotificationBell'
 import { PendingInvites } from '../components/PendingInvites'
 import { Alert, Spinner } from '../components/ui'
 import i18n, { currentLang } from '../i18n'
@@ -14,6 +15,7 @@ import { supabase } from '../lib/supabase'
 
 const NAV = [
   { to: '/app', end: true, icon: Home, label: 'nav.home', admin: false },
+  { to: '/app/reviews', end: false, icon: ClipboardCheck, label: 'nav.reviews', admin: false },
   { to: '/app/cycles', end: false, icon: CalendarRange, label: 'nav.cycles', admin: false },
   { to: '/app/members', end: false, icon: Users, label: 'nav.members', admin: false },
   { to: '/app/templates', end: false, icon: ListChecks, label: 'nav.templates', admin: true },
@@ -77,7 +79,8 @@ export default function AppLayout() {
               ))}
             </nav>
 
-            <div className="ml-auto flex items-center gap-2">
+            <div className="ml-auto flex items-center gap-1.5">
+              <NotificationBell orgId={current.org.id} />
               <LanguageSwitch />
               <button
                 type="button"

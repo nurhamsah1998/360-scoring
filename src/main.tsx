@@ -24,6 +24,8 @@ const Templates = lazy(() => import('./pages/Templates'))
 const TemplateEditor = lazy(() => import('./pages/TemplateEditor'))
 const Cycles = lazy(() => import('./pages/Cycles'))
 const CycleDetail = lazy(() => import('./pages/CycleDetail'))
+const Reviews = lazy(() => import('./pages/Reviews'))
+const ReviewForm = lazy(() => import('./pages/ReviewForm'))
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { staleTime: 30_000, retry: 1, refetchOnWindowFocus: false } },
@@ -51,6 +53,8 @@ createRoot(document.getElementById('root')!).render(
                 <Route path="templates/:id" element={<TemplateEditor />} />
                 <Route path="cycles" element={<Cycles />} />
                 <Route path="cycles/:id" element={<CycleDetail />} />
+                <Route path="reviews" element={<Reviews />} />
+                <Route path="reviews/:id" element={<ReviewForm />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>
