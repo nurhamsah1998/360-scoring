@@ -1,18 +1,39 @@
 {
   "brand": "360 Scoring",
-  "lang": { "label": "Bahasa", "en": "English", "id": "Bahasa Indonesia" },
+  "lang": {
+    "label": "Bahasa",
+    "en": "English",
+    "id": "Bahasa Indonesia"
+  },
   "landing": {
     "title": "Satu orang, empat sudut pandang.",
     "lead": "Kumpulkan penilaian dari atasan, rekan, bawahan, dan orangnya sendiri, lalu bandingkan cara tiap kelompok melihat kompetensi yang sama.",
-    "groups": { "self": "Diri sendiri", "manager": "Atasan", "peer": "Rekan", "report": "Bawahan" },
+    "groups": {
+      "self": "Diri sendiri",
+      "manager": "Atasan",
+      "peer": "Rekan",
+      "report": "Bawahan"
+    },
     "start": "Buat organisasi",
     "signIn": "Masuk",
     "how": "Cara kerja satu siklus",
     "steps": [
-      { "title": "Persiapan", "body": "Undang tim, atur siapa atasan siapa, dan pilih template pertanyaan." },
-      { "title": "Nominasi", "body": "Setiap orang menominasikan rekan yang akan menilainya. Atasan menyetujui daftarnya." },
-      { "title": "Penilaian", "body": "Penilai memberi skor 1–5 untuk tiap kompetensi dan komentar jika perlu." },
-      { "title": "Rilis", "body": "Laporan menampilkan skor per kelompok. Penilaian rekan dan bawahan tetap anonim." }
+      {
+        "title": "Persiapan",
+        "body": "Undang tim, atur siapa atasan siapa, dan pilih template pertanyaan."
+      },
+      {
+        "title": "Nominasi",
+        "body": "Setiap orang menominasikan rekan yang akan menilainya. Atasan menyetujui daftarnya."
+      },
+      {
+        "title": "Penilaian",
+        "body": "Penilai memberi skor 1–5 untuk tiap kompetensi dan komentar jika perlu."
+      },
+      {
+        "title": "Rilis",
+        "body": "Laporan menampilkan skor per kelompok. Penilaian rekan dan bawahan tetap anonim."
+      }
     ],
     "anonymity": "Skor rekan dan bawahan baru tampil jika minimal tiga orang di kelompok itu sudah mengisi."
   },
@@ -60,15 +81,150 @@
   "app": {
     "orgSwitcher": "Organisasi",
     "newOrg": "Organisasi baru",
-    "role": { "admin": "Admin", "member": "Anggota" },
+    "role": {
+      "admin": "Admin",
+      "member": "Anggota"
+    },
     "welcome": "Halo, {{name}}",
     "welcomeBody": "Anda berada di {{org}}. Ini langkah berikutnya.",
     "next": {
-      "members": { "title": "Tambahkan tim", "body": "Undang lewat email atau impor CSV, lalu atur atasan tiap orang." },
-      "template": { "title": "Siapkan pertanyaan", "body": "Mulai dari template bawaan atau tulis kompetensi dan pernyataan sendiri." },
-      "cycle": { "title": "Mulai siklus", "body": "Pilih siapa yang dinilai, atur tenggat, lalu buka nominasi." }
+      "members": {
+        "title": "Tambahkan tim",
+        "body": "Undang lewat email atau impor CSV, lalu atur atasan tiap orang."
+      },
+      "template": {
+        "title": "Siapkan pertanyaan",
+        "body": "Mulai dari template bawaan atau tulis kompetensi dan pernyataan sendiri."
+      },
+      "cycle": {
+        "title": "Mulai siklus",
+        "body": "Pilih siapa yang dinilai, atur tenggat, lalu buka nominasi."
+      }
     },
     "soon": "Hadir di update berikutnya"
   },
-  "notFound": { "title": "Halaman tidak ditemukan", "back": "Ke beranda" }
+  "notFound": {
+    "title": "Halaman tidak ditemukan",
+    "back": "Ke beranda"
+  },
+  "nav": {
+    "home": "Beranda",
+    "members": "Anggota"
+  },
+  "common": {
+    "save": "Simpan perubahan",
+    "cancel": "Batal",
+    "close": "Tutup",
+    "saved": "Perubahan tersimpan.",
+    "none": "Tidak ada",
+    "search": "Cari nama atau email",
+    "optional": "opsional",
+    "loading": "Memuat…",
+    "all": "Semua"
+  },
+  "status": {
+    "invited": "Diundang",
+    "active": "Aktif",
+    "inactive": "Nonaktif"
+  },
+  "invites": {
+    "bannerTitle": "Anda diundang",
+    "bannerBody": "{{org}} mengundang Anda bergabung ke tim mereka.",
+    "accept": "Gabung ke {{org}}",
+    "decline": "Tolak",
+    "joined": "Anda bergabung ke {{org}}.",
+    "pageTitle": "Selesaikan pengaturan akun",
+    "pageBody": "Buat kata sandi supaya Anda bisa masuk lagi nanti.",
+    "submit": "Simpan dan lanjutkan",
+    "noSession": "Link undangan ini sudah kedaluwarsa atau sudah dipakai. Masuk dengan email yang diundang, atau minta admin mengirim ulang."
+  },
+  "members": {
+    "title": "Anggota",
+    "count_one": "{{count}} orang",
+    "count_other": "{{count}} orang",
+    "add": "Tambah anggota",
+    "import": "Impor CSV",
+    "readOnly": "Hanya admin yang bisa mengubah anggota.",
+    "empty": "Tidak ada yang cocok dengan pencarian itu.",
+    "colName": "Nama",
+    "colTitle": "Jabatan",
+    "colManager": "Atasan",
+    "colRole": "Peran",
+    "colStatus": "Status",
+    "noManager": "Tanpa atasan",
+    "reports_one": "{{count}} bawahan langsung",
+    "reports_other": "{{count}} bawahan langsung",
+    "edit": "Ubah",
+    "editTitle": "Ubah {{name}}",
+    "addTitle": "Tambah anggota",
+    "fields": {
+      "name": "Nama lengkap",
+      "email": "Email",
+      "jobTitle": "Jabatan",
+      "manager": "Atasan",
+      "role": "Peran"
+    },
+    "addSubmit": "Tambah dan kirim undangan",
+    "deactivate": "Nonaktifkan",
+    "reactivate": "Aktifkan lagi",
+    "deactivateHint": "Anggota nonaktif tidak bisa masuk ke organisasi ini. Penilaian lamanya tetap disimpan.",
+    "resend": "Kirim ulang undangan",
+    "resent": "Email undangan dikirim ke {{email}}.",
+    "deleteInvite": "Batalkan undangan",
+    "deleted": "Undangan dibatalkan.",
+    "added": "{{email}} ditambahkan.",
+    "result": {
+      "emailSent": "Undangan sudah dikirim lewat email.",
+      "existing_account": "Orang ini sudah punya akun, jadi undangan akan terlihat saat ia masuk.",
+      "send_failed": "Email undangan gagal dikirim ({{reason}}). Ia tetap bisa bergabung dengan mendaftar memakai {{email}}.",
+      "exists": "{{email}} sudah ada di organisasi ini."
+    },
+    "errors": {
+      "manager_loop": "Atasan itu melapor ke orang ini, sehingga membentuk lingkaran.",
+      "last_admin": "Organisasi harus punya minimal satu admin aktif.",
+      "not_allowed": "Anda tidak punya izin mengubah anggota ini.",
+      "generic": "Gagal menyimpan: {{message}}"
+    }
+  },
+  "import": {
+    "title": "Impor anggota dari CSV",
+    "body": "Unggah CSV dengan kolom name, email, job_title, dan manager_email. Atasan bisa orang yang sudah ada di organisasi atau baris lain di file yang sama.",
+    "template": "Unduh template",
+    "choose": "Pilih file CSV",
+    "rows_one": "{{count}} baris",
+    "rows_other": "{{count}} baris",
+    "ready_one": "{{count}} siap diimpor",
+    "ready_other": "{{count}} siap diimpor",
+    "problems_one": "{{count}} bermasalah",
+    "problems_other": "{{count}} bermasalah",
+    "colRow": "Baris",
+    "colIssue": "Cek",
+    "ok": "Siap",
+    "willSkip": "Dilewati",
+    "submit_one": "Impor {{count}} anggota",
+    "submit_other": "Impor {{count}} anggota",
+    "another": "Impor file lain",
+    "missingColumns": "File harus punya minimal kolom name dan email. Ditemukan: {{found}}.",
+    "emptyFile": "File tidak berisi baris.",
+    "issues": {
+      "invalid_email": "Alamat email tidak valid",
+      "duplicate_in_file": "Email yang sama sudah muncul di baris sebelumnya",
+      "exists": "Sudah jadi anggota — akan dilewati",
+      "manager_not_found": "Email atasan tidak ada di organisasi atau file ini",
+      "manager_self": "Seseorang tidak bisa menjadi atasan dirinya sendiri",
+      "manager_loop": "Atasan membentuk lingkaran",
+      "missing_name": "Nama kosong"
+    },
+    "doneTitle": "Impor selesai",
+    "doneCreated_one": "{{count}} anggota ditambahkan",
+    "doneCreated_other": "{{count}} anggota ditambahkan",
+    "doneEmailed_one": "{{count}} email undangan terkirim",
+    "doneEmailed_other": "{{count}} email undangan terkirim",
+    "doneEmailFailed_one": "{{count}} email undangan gagal dikirim",
+    "doneEmailFailed_other": "{{count}} email undangan gagal dikirim",
+    "doneEmailFailedHint": "Layanan email bawaan Supabase hanya mengirim beberapa email per jam. Mereka tetap bisa bergabung dengan mendaftar memakai email yang diundang.",
+    "doneManagerErrors_one": "{{count}} atasan gagal diatur",
+    "doneManagerErrors_other": "{{count}} atasan gagal diatur",
+    "back": "Kembali ke anggota"
+  }
 }

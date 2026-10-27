@@ -8,7 +8,8 @@ if (!url || !key) {
 }
 
 export const supabase = createClient(url, key, {
-  auth: { flowType: 'pkce', detectSessionInUrl: true, persistSession: true },
+  // Implicit flow: works for sign-up confirmation, password reset and admin invite links alike.
+  auth: { flowType: 'implicit', detectSessionInUrl: true, persistSession: true },
 })
 
 export const appUrl = (path: string) => `${window.location.origin}${path}`

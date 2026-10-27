@@ -1,9 +1,9 @@
 import clsx from 'clsx'
-import { Loader2 } from 'lucide-react'
-import { forwardRef, useId, type ButtonHTMLAttributes, type InputHTMLAttributes, type ReactNode } from 'react'
+import { Loader2, X } from 'lucide-react'
+import { forwardRef, useEffect, useId, useRef, type ButtonHTMLAttributes, type InputHTMLAttributes, type ReactNode } from 'react'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'primary' | 'ghost' | 'outline'
+  variant?: 'primary' | 'ghost' | 'outline' | 'danger'
   loading?: boolean
 }
 
@@ -17,6 +17,7 @@ export function Button({ variant = 'primary', loading, className, children, disa
         variant === 'primary' && 'bg-brand text-white hover:bg-brand-hover',
         variant === 'outline' && 'border border-line bg-card text-ink hover:border-ink/40',
         variant === 'ghost' && 'text-ink hover:bg-ink/5',
+        variant === 'danger' && 'text-danger hover:bg-danger/8',
         className,
       )}
     >
@@ -65,6 +66,73 @@ export function Alert({ tone = 'danger', children }: { tone?: 'danger' | 'succes
     >
       {children}
     </div>
+  )
+}
+
+type SelectFieldProps = React.SelectHTMLAttributes<HTMLSelectElement> & { label: string; hint?: string }
+
+export function SelectField({ label, hint, className, children, ...rest }: SelectFieldProps) {
+  const id = useId()
+  return (
+    <div className={clsx('flex flex-col gap-1.5', className)}>
+      <label htmlFor={id} className="text-sm font-semibold">{label}</label>
+      <select
+        id={id}
+        aria-describedby={hint ? `${id}-hint` : undefined}
+        className="rounded-lg border border-line bg-card px-3 py-2.5 text-[15px] outline-none focus:border-brand focus:ring-2 focus:ring-brand/15 disabled:opacity-60"
+        {...rest}
+      >
+        {children}
+      </select>
+      {hint && <p id={`${id}-hint`} className="text-sm text-muted">{hint}</p>}
+    </div>
+  )
+}
+
+const STATUS_STYLES = {
+  active: 'bg-success/10 text-success',
+  invited: 'bg-peer/12 text-[#8a5212]',
+  inactive: 'bg-ink/8 text-muted',
+  admin: 'bg-brand/10 text-brand',
+  member: 'bg-ink/6 text-muted',
+} as const
+
+export function Badge({ kind, children }: { kind: keyof typeof STATUS_STYLES; children: ReactNode }) {
+  return (
+    <span className={clsx('inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold', STATUS_STYLES[kind])}>
+      {children}
+    </span>
+  )
+}
+
+/** Modal built on the native <dialog> element (focus trap, Esc to close, backdrop). */
+export function Dialog({ open, onClose, title, children }: { open: boolean; onClose: () => void; title: string; children: ReactNode }) {
+  const ref = useRef<HTMLDialogElement>(null)
+  useEffect(() => {
+    const d = ref.current
+    if (!d) return
+    if (open && !d.open) d.showModal()
+    if (!open && d.open) d.close()
+  }, [open])
+  return (
+    <dialog
+      ref={ref}
+      onClose={onClose}
+      onClick={(e) => { if (e.target === ref.current) onClose() }}
+      className="m-auto w-[min(520px,calc(100vw-24px))] rounded-2xl border border-line bg-card p-0 text-ink shadow-[0_24px_60px_-20px_rgba(23,32,46,0.45)] backdrop:bg-ink/40"
+    >
+      {open && (
+        <div className="max-h-[85dvh] overflow-y-auto p-5 sm:p-6">
+          <div className="mb-5 flex items-start justify-between gap-4">
+            <h2 className="text-xl font-extrabold tracking-tight">{title}</h2>
+            <button type="button" onClick={onClose} className="-m-1 rounded-md p-1 text-muted hover:bg-ink/5 hover:text-ink" aria-label="Close">
+              <X className="size-5" aria-hidden />
+            </button>
+          </div>
+          {children}
+        </div>
+      )}
+    </dialog>
   )
 }
 

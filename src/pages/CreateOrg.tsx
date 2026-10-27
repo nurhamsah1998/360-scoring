@@ -3,6 +3,7 @@ import { useState, type FormEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthLayout } from '../components/AuthLayout'
+import { PendingInvites } from '../components/PendingInvites'
 import { Alert, Button, Field } from '../components/ui'
 import { authErrorMessage } from '../lib/errors'
 import { setCurrentOrgSlug, useMyOrgs } from '../lib/orgs'
@@ -39,6 +40,7 @@ export default function CreateOrg() {
       intro={t('onboarding.body')}
       footer={orgs && orgs.length > 0 ? <Link to="/app" className="font-semibold text-brand underline-offset-2 hover:underline">← {t('app.orgSwitcher')}</Link> : undefined}
     >
+      <PendingInvites className="mb-6" />
       <form onSubmit={onSubmit} className="flex flex-col gap-4" noValidate>
         {error && <Alert>{error}</Alert>}
         <Field

@@ -17,11 +17,12 @@ npm run dev
 ```
 
 Database migrations live in `supabase/migrations/` and are applied in order.
+Edge functions live in `supabase/functions/` (`invite-members` sends invitations with the service role).
 
 ## Status
 
 - [x] Phase 1 — Foundation: auth, organizations, base schema + RLS
-- [ ] Phase 2 — Members, invitations, CSV import
+- [x] Phase 2 — Members, invitations, CSV import
 - [ ] Phase 3 — Templates, cycles, nominations
 - [ ] Phase 4 — Reviews
 - [ ] Phase 5 — Reports

@@ -45,10 +45,10 @@ create policy "organizations: invitee reads"
   using (private.has_pending_invite(id));
 
 -- Only pending invitations can be deleted; active people are deactivated instead.
-drop policy "memberships: admins delete" on public.memberships;
-create policy "memberships: admins delete invites"
-  on public.memberships for delete to authenticated
+alter policy "memberships: admins delete" on public.memberships
   using (private.is_org_admin(org_id) and status = 'invited');
+alter policy "memberships: admins delete" on public.memberships
+  rename to "memberships: admins delete invites";
 
 -- ── create_organization now records email & name on the admin membership ──
 create or replace function public.create_organization(p_name text)

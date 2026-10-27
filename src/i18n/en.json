@@ -1,18 +1,39 @@
 {
   "brand": "360 Scoring",
-  "lang": { "label": "Language", "en": "English", "id": "Bahasa Indonesia" },
+  "lang": {
+    "label": "Language",
+    "en": "English",
+    "id": "Bahasa Indonesia"
+  },
   "landing": {
     "title": "One person, four points of view.",
     "lead": "Collect feedback from a manager, peers, direct reports and the person themselves, then compare how each group sees the same skills.",
-    "groups": { "self": "Self", "manager": "Manager", "peer": "Peers", "report": "Direct reports" },
+    "groups": {
+      "self": "Self",
+      "manager": "Manager",
+      "peer": "Peers",
+      "report": "Direct reports"
+    },
     "start": "Create your organization",
     "signIn": "Sign in",
     "how": "How a cycle works",
     "steps": [
-      { "title": "Set up", "body": "Invite your team, set who reports to whom, and pick a question template." },
-      { "title": "Nominate", "body": "Everyone nominates peers to review them. Managers approve the list." },
-      { "title": "Review", "body": "Reviewers rate each skill from 1 to 5 and leave optional comments." },
-      { "title": "Release", "body": "Reports show scores by group. Peer and report groups stay anonymous." }
+      {
+        "title": "Set up",
+        "body": "Invite your team, set who reports to whom, and pick a question template."
+      },
+      {
+        "title": "Nominate",
+        "body": "Everyone nominates peers to review them. Managers approve the list."
+      },
+      {
+        "title": "Review",
+        "body": "Reviewers rate each skill from 1 to 5 and leave optional comments."
+      },
+      {
+        "title": "Release",
+        "body": "Reports show scores by group. Peer and report groups stay anonymous."
+      }
     ],
     "anonymity": "Peer and direct-report scores only appear once at least three people in that group have responded."
   },
@@ -60,15 +81,150 @@
   "app": {
     "orgSwitcher": "Organization",
     "newOrg": "New organization",
-    "role": { "admin": "Admin", "member": "Member" },
+    "role": {
+      "admin": "Admin",
+      "member": "Member"
+    },
     "welcome": "Welcome, {{name}}",
     "welcomeBody": "You're in {{org}}. Here's what comes next.",
     "next": {
-      "members": { "title": "Add your team", "body": "Invite people by email or import a CSV, and set each person's manager." },
-      "template": { "title": "Prepare questions", "body": "Start from the default template or write your own skills and statements." },
-      "cycle": { "title": "Start a cycle", "body": "Choose who's reviewed, set deadlines, and open nominations." }
+      "members": {
+        "title": "Add your team",
+        "body": "Invite people by email or import a CSV, and set each person's manager."
+      },
+      "template": {
+        "title": "Prepare questions",
+        "body": "Start from the default template or write your own skills and statements."
+      },
+      "cycle": {
+        "title": "Start a cycle",
+        "body": "Choose who's reviewed, set deadlines, and open nominations."
+      }
     },
     "soon": "Coming in the next update"
   },
-  "notFound": { "title": "Page not found", "back": "Go to home" }
+  "notFound": {
+    "title": "Page not found",
+    "back": "Go to home"
+  },
+  "nav": {
+    "home": "Home",
+    "members": "Members"
+  },
+  "common": {
+    "save": "Save changes",
+    "cancel": "Cancel",
+    "close": "Close",
+    "saved": "Changes saved.",
+    "none": "None",
+    "search": "Search by name or email",
+    "optional": "optional",
+    "loading": "Loading…",
+    "all": "All"
+  },
+  "status": {
+    "invited": "Invited",
+    "active": "Active",
+    "inactive": "Deactivated"
+  },
+  "invites": {
+    "bannerTitle": "You've been invited",
+    "bannerBody": "{{org}} invited you to join their team.",
+    "accept": "Join {{org}}",
+    "decline": "Decline",
+    "joined": "You joined {{org}}.",
+    "pageTitle": "Finish setting up your account",
+    "pageBody": "Choose a password so you can sign in again later.",
+    "submit": "Save and continue",
+    "noSession": "This invitation link has expired or was already used. Sign in with the invited email, or ask your admin to resend it."
+  },
+  "members": {
+    "title": "Members",
+    "count_one": "{{count}} person",
+    "count_other": "{{count}} people",
+    "add": "Add member",
+    "import": "Import CSV",
+    "readOnly": "Only admins can change members.",
+    "empty": "No one matches that search.",
+    "colName": "Name",
+    "colTitle": "Job title",
+    "colManager": "Manager",
+    "colRole": "Role",
+    "colStatus": "Status",
+    "noManager": "No manager",
+    "reports_one": "{{count}} direct report",
+    "reports_other": "{{count}} direct reports",
+    "edit": "Edit",
+    "editTitle": "Edit {{name}}",
+    "addTitle": "Add a member",
+    "fields": {
+      "name": "Full name",
+      "email": "Email",
+      "jobTitle": "Job title",
+      "manager": "Manager",
+      "role": "Role"
+    },
+    "addSubmit": "Add and send invite",
+    "deactivate": "Deactivate",
+    "reactivate": "Reactivate",
+    "deactivateHint": "Deactivated people can't sign in to this organization. Their past reviews are kept.",
+    "resend": "Resend invite",
+    "resent": "Invite email sent to {{email}}.",
+    "deleteInvite": "Cancel invitation",
+    "deleted": "Invitation cancelled.",
+    "added": "{{email}} was added.",
+    "result": {
+      "emailSent": "We emailed them an invitation.",
+      "existing_account": "They already have an account, so they'll see the invitation when they sign in.",
+      "send_failed": "The invite email couldn't be sent ({{reason}}). They can still join by signing up with {{email}}.",
+      "exists": "{{email}} is already in this organization."
+    },
+    "errors": {
+      "manager_loop": "That manager reports to this person, which would create a loop.",
+      "last_admin": "This organization needs at least one active admin.",
+      "not_allowed": "You don't have permission to change this member.",
+      "generic": "Couldn't save: {{message}}"
+    }
+  },
+  "import": {
+    "title": "Import members from CSV",
+    "body": "Upload a CSV with the columns name, email, job_title and manager_email. Managers can be people already in the organization or other rows in the same file.",
+    "template": "Download template",
+    "choose": "Choose CSV file",
+    "rows_one": "{{count}} row",
+    "rows_other": "{{count}} rows",
+    "ready_one": "{{count}} ready to import",
+    "ready_other": "{{count}} ready to import",
+    "problems_one": "{{count}} with problems",
+    "problems_other": "{{count}} with problems",
+    "colRow": "Row",
+    "colIssue": "Check",
+    "ok": "Ready",
+    "willSkip": "Skipped",
+    "submit_one": "Import {{count}} member",
+    "submit_other": "Import {{count}} members",
+    "another": "Import another file",
+    "missingColumns": "The file needs at least the columns name and email. Found: {{found}}.",
+    "emptyFile": "The file has no rows.",
+    "issues": {
+      "invalid_email": "Email address isn't valid",
+      "duplicate_in_file": "Same email appears earlier in the file",
+      "exists": "Already a member — will be skipped",
+      "manager_not_found": "Manager email isn't in the organization or this file",
+      "manager_self": "Someone can't be their own manager",
+      "manager_loop": "Managers form a loop",
+      "missing_name": "Name is empty"
+    },
+    "doneTitle": "Import finished",
+    "doneCreated_one": "{{count}} member added",
+    "doneCreated_other": "{{count}} members added",
+    "doneEmailed_one": "{{count}} invite email sent",
+    "doneEmailed_other": "{{count}} invite emails sent",
+    "doneEmailFailed_one": "{{count}} invite email couldn't be sent",
+    "doneEmailFailed_other": "{{count}} invite emails couldn't be sent",
+    "doneEmailFailedHint": "Supabase's built-in email service only sends a few emails per hour. Those people can still join by signing up with their invited email.",
+    "doneManagerErrors_one": "{{count}} manager couldn't be set",
+    "doneManagerErrors_other": "{{count}} managers couldn't be set",
+    "back": "Back to members"
+  }
 }
