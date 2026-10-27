@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Schibsted Grotesk Variable", "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
 
   /* Surfaces & ink — "card" is frosted glass over the aurora background */
   --color-paper: #EEF2F8;
-  --color-card: rgb(255 255 255 / 0.56);
+  --color-card: rgb(255 255 255 / 0.66);
   --color-line: rgb(23 32 46 / 0.10);
   --color-ink: #17202E;
   --color-muted: #536074;
@@ -50,12 +50,10 @@
   }
 }
 
-/* Glass surfaces. Every bg-card blurs what's behind it; rounded panels also get a light edge and soft depth. */
+/* Glass surfaces: translucent cards with a light edge and soft depth. */
 @layer components {
-  .bg-card {
-    -webkit-backdrop-filter: blur(18px) saturate(160%);
-    backdrop-filter: blur(18px) saturate(160%);
-  }
+  /* Cards sit on the smooth aurora, so a backdrop blur would look the same but cost a GPU
+     pass per card on every scroll frame. Only the bars that float over content blur. */
   .bg-card:is(.rounded-xl, .rounded-2xl, .rounded-3xl) {
     border-color: rgb(255 255 255 / 0.75);
     box-shadow:

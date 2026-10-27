@@ -90,7 +90,7 @@ export function RadarChart({ report, series }: Props) {
               <li key={s} className="flex items-center gap-2">
                 <span className="inline-block h-0.5 w-3.5" style={{ background: SERIES_COLOR[s] }} aria-hidden />
                 <span className="text-muted">{t(`report.groups.${s}`)}</span>
-                <span className="ml-auto pl-4 font-semibold tabular-nums">{fmt(valueOf(comps[active], s), lang)}</span>
+                <span className="ml-auto pl-4 font-semibold">{fmt(valueOf(comps[active], s), lang)}</span>
               </li>
             ))}
           </ul>

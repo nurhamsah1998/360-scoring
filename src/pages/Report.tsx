@@ -113,11 +113,11 @@ function ReportView({ r }: { r: ReportData }) {
       <section className="mt-8 grid gap-4 sm:grid-cols-[1fr_1fr_1.4fr]">
         <div className="rounded-xl border border-line bg-card p-5">
           <p className="flex items-center gap-2 text-sm font-semibold text-muted"><Swatch s="self" />{t('report.groups.self')}</p>
-          <p className="mt-2 text-[44px] font-extrabold leading-none tabular-nums">{fmt(selfOverall, lang)}</p>
+          <p className="mt-2 text-[44px] font-extrabold leading-none">{fmt(selfOverall, lang)}</p>
         </div>
         <div className="rounded-xl border border-line bg-card p-5">
           <p className="flex items-center gap-2 text-sm font-semibold text-muted"><Swatch s="others" />{t('report.groups.others')}</p>
-          <p className="mt-2 text-[44px] font-extrabold leading-none tabular-nums">{fmt(r.overall.others, lang)}</p>
+          <p className="mt-2 text-[44px] font-extrabold leading-none">{fmt(r.overall.others, lang)}</p>
           {!r.others_visible && <p className="mt-2 text-sm text-muted">{t('report.othersHidden')}</p>}
         </div>
         <div className="flex flex-col justify-center gap-2 text-[15px] text-muted">
@@ -198,7 +198,7 @@ function ScoreTable({ r, series }: { r: ReportData; series: Series[] }) {
   const [open, setOpen] = useState<string | null>(null)
 
   return (
-    <div className="overflow-x-auto rounded-xl border border-line bg-card">
+    <div className="relative overflow-x-auto rounded-xl border border-line bg-card">
       <table className="w-full min-w-[420px] text-left text-[15px]">
         <caption className="sr-only">{t('report.table')}</caption>
         <thead className="border-b border-line text-sm text-muted">

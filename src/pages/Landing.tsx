@@ -30,10 +30,7 @@ export default function Landing() {
       {/* ── Hero: dark stage so the colours of the four groups glow ── */}
       <section className="relative isolate overflow-hidden bg-[#0C1524] text-white">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -left-40 -top-40 size-[520px] rounded-full bg-[#8B2F9C] opacity-40 blur-[120px]" />
-          <div className="absolute -right-32 top-10 size-[480px] rounded-full bg-[#4A90E2] opacity-40 blur-[120px]" />
-          <div className="absolute bottom-[-220px] left-1/3 size-[560px] rounded-full bg-[#00806A] opacity-45 blur-[130px]" />
-          <div className="absolute bottom-0 right-[-120px] size-[360px] rounded-full bg-[#C97A1E] opacity-35 blur-[110px]" />
+          <div className="absolute inset-0 [background:radial-gradient(520px_420px_at_8%_0%,rgb(139_47_156/0.42),transparent_70%),radial-gradient(520px_420px_at_100%_15%,rgb(74_144_226/0.38),transparent_70%),radial-gradient(640px_420px_at_45%_110%,rgb(0_128_106/0.48),transparent_70%),radial-gradient(400px_320px_at_100%_100%,rgb(201_122_30/0.30),transparent_70%)]" />
           <div className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
         </div>
 
@@ -49,7 +46,7 @@ export default function Landing() {
 
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-4 pb-20 pt-8 sm:px-8 md:pt-14 lg:grid-cols-[1.05fr_1fr] lg:pb-28">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 py-1.5 pl-2 pr-3.5 text-sm font-semibold backdrop-blur">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 py-1.5 pl-2 pr-3.5 text-sm font-semibold">
               <Mark size={20} tone="light" />{t('landing.eyebrow')}
             </p>
             <h1 className="mt-6 text-[46px] font-extrabold leading-[1.0] tracking-[-0.035em] sm:text-[68px]">
@@ -66,7 +63,7 @@ export default function Landing() {
               <a href="#demo" className="group inline-flex items-center gap-2 rounded-xl bg-[#3FD1B0] px-5 py-3 font-bold text-[#0C1524] shadow-[0_10px_30px_-10px_rgba(63,209,176,0.8)] hover:bg-[#62DDC0]">
                 {t('landing.tryDemo')}<ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
               </a>
-              <Link to={startTo} className="rounded-xl border border-white/20 bg-white/10 px-5 py-3 font-semibold backdrop-blur hover:bg-white/15">
+              <Link to={startTo} className="rounded-xl border border-white/20 bg-white/10 px-5 py-3 font-semibold hover:bg-white/15">
                 {t('landing.start')}
               </Link>
             </div>
@@ -144,8 +141,7 @@ export default function Landing() {
         <section className="px-4 pb-16 sm:px-8">
           <div className="relative isolate mx-auto max-w-6xl overflow-hidden rounded-[32px] bg-[#0C1524] px-6 py-14 text-white sm:px-14">
             <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-              <div className="absolute -right-24 -top-24 size-[380px] rounded-full bg-[#00806A] opacity-50 blur-[110px]" />
-              <div className="absolute -bottom-32 left-10 size-[320px] rounded-full bg-[#8B2F9C] opacity-40 blur-[110px]" />
+              <div className="absolute inset-0 [background:radial-gradient(420px_320px_at_100%_0%,rgb(0_128_106/0.55),transparent_70%),radial-gradient(380px_300px_at_10%_110%,rgb(139_47_156/0.45),transparent_70%)]" />
             </div>
             <div className="flex flex-col items-start gap-8 md:flex-row md:items-center">
               <Mark size={96} tone="light" />
@@ -193,7 +189,7 @@ function HeroPreview() {
 
   return (
     <div className="relative mx-auto w-full max-w-[460px] lg:mr-0">
-      <figure className="relative rounded-3xl border border-white/60 bg-white/90 p-5 text-ink shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)] backdrop-blur-xl sm:p-6"
+      <figure className="relative rounded-3xl border border-white/60 bg-white/90 p-5 text-ink shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)] sm:p-6"
         aria-label={p('label')}>
         <div className="flex items-start justify-between gap-3">
           <div>
@@ -239,7 +235,7 @@ function HeroPreview() {
       {/* Floating chips */}
       <div className="absolute -bottom-10 -left-3 hidden rounded-2xl border border-white/60 bg-white/95 p-3 pr-4 text-ink shadow-[0_20px_40px_-18px_rgba(0,0,0,0.55)] [animation:float_6s_ease-in-out_infinite] sm:block sm:-left-10">
         <p className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.1em] text-muted"><TrendingUp className="size-3.5 text-peer" aria-hidden />{p('gap')}</p>
-        <p className="mt-0.5 font-extrabold">{p('gapSkill')} <span className="tabular-nums text-self">{n(4.6)}</span> <span className="text-muted">vs</span> <span className="tabular-nums text-peer">{n(3.5)}</span></p>
+        <p className="mt-0.5 font-extrabold">{p('gapSkill')} <span className="text-self">{n(4.6)}</span> <span className="text-muted">vs</span> <span className="text-peer">{n(3.5)}</span></p>
         <p className="text-xs text-muted">{p('gapBody')}</p>
       </div>
 
