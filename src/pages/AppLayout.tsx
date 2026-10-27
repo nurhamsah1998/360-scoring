@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, Navigate, NavLink, Outlet } from 'react-router-dom'
 import { Logo } from '../components/Dial'
+import { DemoBanner } from '../components/Demo'
 import { LanguageSwitch } from '../components/LanguageSwitch'
 import { NotificationBell } from '../components/NotificationBell'
 import { PendingInvites } from '../components/PendingInvites'
@@ -11,7 +12,9 @@ import { Alert, Spinner } from '../components/ui'
 import i18n, { currentLang } from '../i18n'
 import { OrgContext } from '../lib/org-context'
 import { getCurrentOrgSlug, setCurrentOrgSlug, useMyOrgs, useProfile } from '../lib/orgs'
+import { demoRoleOf, isDemoEmail } from '../lib/demo'
 import { supabase } from '../lib/supabase'
+import { useAuth } from '../auth/AuthProvider'
 
 const NAV = [
   { to: '/app', end: true, icon: Home, label: 'nav.home', admin: false },
@@ -25,6 +28,8 @@ export default function AppLayout() {
   const { t } = useTranslation()
   const { data: orgs, isLoading, error } = useMyOrgs()
   const { data: profile } = useProfile()
+  const { session } = useAuth()
+  const demoUser = isDemoEmail(session?.user.email)
 
   // Apply the language saved on the profile once it loads.
   useEffect(() => {
@@ -58,9 +63,9 @@ export default function AppLayout() {
               >
                 {orgs.map((o) => <option key={o.org.id} value={o.org.slug}>{o.org.name}</option>)}
               </select>
-              <Link to="/onboarding" className="inline-flex items-center gap-1 rounded-lg px-2 py-1.5 text-sm font-semibold text-muted hover:bg-ink/5 hover:text-ink" title={t('app.newOrg')}>
+              {!demoUser && <Link to="/onboarding" className="inline-flex items-center gap-1 rounded-lg px-2 py-1.5 text-sm font-semibold text-muted hover:bg-ink/5 hover:text-ink" title={t('app.newOrg')}>
                 <Plus className="size-4" aria-hidden /><span className="sr-only">{t('app.newOrg')}</span>
-              </Link>
+              </Link>}
             </div>
 
             <nav className="hidden items-center gap-0.5 sm:ml-2 md:flex" aria-label="Main">
@@ -93,6 +98,7 @@ export default function AppLayout() {
             </div>
           </div>
         </header>
+        {current.org.is_demo && <DemoBanner role={demoRoleOf(session?.user.email)} />}
 
         <main className="mx-auto max-w-6xl px-4 py-8 sm:px-8 sm:py-10">
           <PendingInvites className="mb-8 print:hidden" />

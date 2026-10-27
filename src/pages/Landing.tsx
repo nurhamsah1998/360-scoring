@@ -2,6 +2,7 @@ import { ShieldCheck } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../auth/AuthProvider'
+import { DemoPicker } from '../components/Demo'
 import { Dial, Logo } from '../components/Dial'
 import { LanguageSwitch } from '../components/LanguageSwitch'
 
@@ -69,6 +70,10 @@ export default function Landing() {
             ))}
           </div>
         </section>
+
+        <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-8">
+          <DemoPicker />
+        </div>
 
         <section className="border-t border-line bg-card">
           <div className="mx-auto max-w-6xl px-4 py-14 sm:px-8">

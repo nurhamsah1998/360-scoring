@@ -5,7 +5,7 @@ import { supabase } from './supabase'
 export type MyOrg = {
   membershipId: string
   role: 'admin' | 'member'
-  org: { id: string; name: string; slug: string }
+  org: { id: string; name: string; slug: string; is_demo: boolean }
 }
 
 const CURRENT_ORG_KEY = 'currentOrg'
@@ -19,7 +19,7 @@ export function useMyOrgs() {
     queryFn: async (): Promise<MyOrg[]> => {
       const { data, error } = await supabase
         .from('memberships')
-        .select('id, role, organizations!inner(id, name, slug)')
+        .select('id, role, organizations!inner(id, name, slug, is_demo)')
         .eq('user_id', userId!)
         .eq('status', 'active')
         .order('created_at')

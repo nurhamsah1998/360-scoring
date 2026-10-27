@@ -52,7 +52,7 @@ export default function Members() {
           <h1 className="text-[32px] font-extrabold leading-tight tracking-tight">{t('members.title')}</h1>
           <p className="mt-1 text-muted">{t('members.count', { count: counts.all })}</p>
         </div>
-        {isAdmin && (
+        {isAdmin && !org.is_demo && (
           <div className="flex gap-2">
             <Link to="/app/members/import" className="inline-flex items-center gap-2 rounded-lg border border-line bg-card px-4 py-2.5 text-[15px] font-semibold hover:border-ink/40">
               <FileUp className="size-4" aria-hidden />{t('members.import')}
@@ -63,6 +63,7 @@ export default function Members() {
       </div>
 
       {!isAdmin && <p className="mt-4 text-sm text-muted">{t('members.readOnly')}</p>}
+      {isAdmin && org.is_demo && <p className="mt-4 text-sm text-muted">{t('demo.noInvites')}</p>}
       {notice && <div className="mt-5"><Alert tone={notice.tone}>{notice.text}</Alert></div>}
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">

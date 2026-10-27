@@ -484,5 +484,32 @@
     "reportsHelpAdmin": "Admins and each person's manager can see reports once reviews are closed. People see their own after release.",
     "viewReport": "View report",
     "yourReport": "Your report"
+  },
+  "demo": {
+    "title": "Try it without signing up",
+    "body": "Open a ready-made organization with real-looking data. Pick whose eyes to see it through.",
+    "roles": {
+      "admin": {
+        "label": "Admin",
+        "who": "Sari, Director",
+        "what": "Runs cycles, manages people and sees every report."
+      },
+      "manager": {
+        "label": "Manager",
+        "who": "Bima, Academic Manager",
+        "what": "Approves peer nominations and reviews their team."
+      },
+      "employee": {
+        "label": "Employee",
+        "who": "Laras, Senior Tutor",
+        "what": "Nominates peers, fills in reviews and reads their own report."
+      }
+    },
+    "go": "Open as {{role}}",
+    "opening": "Opening the demo…",
+    "banner": "You're exploring the demo as {{who}}. Anything you change resets every day at 03:00 WIB (20:00 UTC).",
+    "switch": "Switch to:",
+    "own": "Create your own",
+    "noInvites": "Inviting and importing people is turned off in the demo."
   }
 }

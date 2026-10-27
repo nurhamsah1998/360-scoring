@@ -484,5 +484,32 @@
     "reportsHelpAdmin": "Admin dan atasan masing-masing bisa melihat laporan setelah penilaian ditutup. Karyawan melihat laporannya sendiri setelah dirilis.",
     "viewReport": "Lihat laporan",
     "yourReport": "Laporan Anda"
+  },
+  "demo": {
+    "title": "Coba tanpa mendaftar",
+    "body": "Buka organisasi siap pakai dengan data yang terlihat nyata. Pilih dari sudut pandang siapa Anda ingin melihatnya.",
+    "roles": {
+      "admin": {
+        "label": "Admin",
+        "who": "Sari, Direktur",
+        "what": "Menjalankan siklus, mengelola orang, dan melihat semua laporan."
+      },
+      "manager": {
+        "label": "Atasan",
+        "who": "Bima, Manajer Akademik",
+        "what": "Menyetujui nominasi rekan dan menilai timnya."
+      },
+      "employee": {
+        "label": "Karyawan",
+        "who": "Laras, Tutor Senior",
+        "what": "Menominasikan rekan, mengisi penilaian, dan membaca laporannya sendiri."
+      }
+    },
+    "go": "Buka sebagai {{role}}",
+    "opening": "Membuka demo…",
+    "banner": "Anda sedang mencoba demo sebagai {{who}}. Semua perubahan direset setiap hari pukul 03.00 WIB.",
+    "switch": "Ganti ke:",
+    "own": "Buat milik Anda",
+    "noInvites": "Mengundang dan mengimpor anggota dimatikan di demo."
   }
 }

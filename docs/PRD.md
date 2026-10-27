@@ -1,6 +1,6 @@
 # PRD — 360-Scoring
 
-> Status: **Draft v0.1** · Pemilik: Nurhamsah · Tanggal: 27 Okt 2026
+> Status: **v1.0 — terimplementasi** · Pemilik: Nurhamsah · Tanggal: 27 Okt 2026
 
 ## 1. Ringkasan
 
@@ -158,3 +158,15 @@ notifications        (id, user_id, org_id, type, payload jsonb, read_at)
 2. **Skala 1–5** dengan label: Sangat kurang, Kurang, Cukup, Baik, Sangat baik.
 3. **Template bawaan** berisi 5 kompetensi (Komunikasi, Kerja sama, Kepemimpinan, Problem solving, Integritas) dan tersedia otomatis untuk setiap organisasi baru.
 4. **Pembulatan skor**: 1 desimal.
+
+## 14. Keputusan selama implementasi
+
+| Topik | Keputusan |
+|---|---|
+| Menarik nominasi | Nominasi tidak dihapus, tetapi ditandai `withdrawn` sebagai riwayat. Nominasi yang ditarik atau ditolak bisa diajukan ulang. |
+| Peserta nonaktif | Peserta yang dinonaktifkan setelah ditambahkan dilewati saat siklus dimulai, tidak dihapus. |
+| Skor "orang lain" | Hanya menggabungkan atasan dan kelompok anonim yang **tampil** (≥ 3 respons), sehingga kelompok yang disembunyikan tidak bisa ditebak lewat pengurangan. |
+| Skala radar | Dimulai dari 1 (bukan 0) karena skala penilaian 1–5. |
+| Warna kelompok | Diri sendiri `#8B2F9C`, Atasan `#00806A`, Rekan `#C97A1E`, Bawahan `#4A90E2`. Lolos uji buta warna untuk semua pasangan. |
+| Notifikasi | Dibuat oleh trigger database saat tahap berubah dan nominasi diputuskan. Pengingat tenggat tampil di "Tugas Anda". |
+| Demo | Organisasi "Northwind Language Institute" dengan 3 akun login. Undangan email dan pembuatan organisasi dimatikan. Reset harian pukul 03.00 WIB lewat pg_cron. |

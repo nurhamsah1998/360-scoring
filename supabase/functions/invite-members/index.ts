@@ -57,6 +57,10 @@ Deno.serve(async (req) => {
     .maybeSingle()
   if (!me) return json(403, { error: 'Only organization admins can add members' })
 
+  // The public demo must never send real emails.
+  const { data: org } = await admin.from('organizations').select('is_demo').eq('id', orgId).single()
+  if (org?.is_demo) return json(403, { error: 'Inviting people is turned off in the demo. Sign up to invite your own team.' })
+
   const redirectTo = typeof body.redirectTo === 'string' ? body.redirectTo : undefined
 
   // ── Normalize & validate ──
