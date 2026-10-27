@@ -31,11 +31,15 @@ export default function SignUp() {
         emailRedirectTo: appUrl('/app'),
       },
     })
-    setLoading(false)
-    if (error) return setError(authErrorMessage(t, error))
+    if (error) { setLoading(false); return setError(authErrorMessage(t, error)) }
     // Supabase returns a user with no identities when the email is already registered.
-    if (data.user && data.user.identities?.length === 0) return setError(t('auth.errors.userExists'))
-    if (data.session) return navigate('/app', { replace: true })
+    if (data.user && data.user.identities?.length === 0) { setLoading(false); return setError(t('auth.errors.userExists')) }
+    // With email confirmation turned off, Supabase signs the user in straight away.
+    if (data.session) return navigate('/onboarding', { replace: true })
+    // Fallback: try signing in directly; this only succeeds when the account needs no confirmation.
+    const { data: signed } = await supabase.auth.signInWithPassword({ email, password })
+    setLoading(false)
+    if (signed.session) return navigate('/onboarding', { replace: true })
     setSentTo(email)
   }
 
