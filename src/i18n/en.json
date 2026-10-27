@@ -35,7 +35,70 @@
         "body": "Reports show scores by group. Peer and report groups stay anonymous."
       }
     ],
-    "anonymity": "Peer and direct-report scores only appear once at least three people in that group have responded."
+    "anonymity": "Peer and direct-report scores only appear once at least three people in that group have responded.",
+    "eyebrow": "360° performance feedback",
+    "titleA": "One person,",
+    "titleB": "four points of view.",
+    "tryDemo": "Try the demo",
+    "trust": [
+      "Anonymous by design",
+      "Indonesian & English",
+      "Free to try, no sign-up"
+    ],
+    "preview": {
+      "label": "Sample report",
+      "who": "Laras · Senior Tutor",
+      "cycle": "Cycle · Released",
+      "skills": [
+        "Communication",
+        "Leadership",
+        "Teamwork",
+        "Initiative",
+        "Expertise"
+      ],
+      "gap": "Biggest gap",
+      "gapSkill": "Initiative",
+      "gapBody": "Rated higher by self than by peers",
+      "anon": "Peers: 4 responses · anonymous"
+    },
+    "viewsTitle": "Every group sees something different",
+    "viewsLead": "A single score hides that. 360 Scoring keeps each group separate so the gaps show.",
+    "views": {
+      "manager": "Sees results and priorities.",
+      "peer": "Sees day-to-day collaboration.",
+      "report": "Sees leadership up close.",
+      "self": "Sees intent and effort."
+    },
+    "featuresTitle": "Built for a real review cycle",
+    "features": [
+      {
+        "title": "Anonymity with a threshold",
+        "body": "Peer and report scores stay hidden until at least three people respond."
+      },
+      {
+        "title": "Reusable templates",
+        "body": "Group statements into skills once and reuse them every cycle."
+      },
+      {
+        "title": "Invite by email or CSV",
+        "body": "Bring a whole team in at once, including who reports to whom."
+      },
+      {
+        "title": "Clear stages",
+        "body": "Draft, nomination, review, closed, released. Everyone knows what is next."
+      },
+      {
+        "title": "In-app reminders",
+        "body": "Pending nominations and reviews land in each person’s task list."
+      },
+      {
+        "title": "Two languages",
+        "body": "Switch between Indonesian and English at any time."
+      }
+    ],
+    "ctaTitle": "Run your first 360° cycle",
+    "ctaBody": "Set it up in minutes, or look around the demo first.",
+    "footer": "360 Scoring · a 360° feedback app"
   },
   "auth": {
     "email": "Work email",

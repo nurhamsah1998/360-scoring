@@ -35,7 +35,70 @@
         "body": "Laporan menampilkan skor per kelompok. Penilaian rekan dan bawahan tetap anonim."
       }
     ],
-    "anonymity": "Skor rekan dan bawahan baru tampil jika minimal tiga orang di kelompok itu sudah mengisi."
+    "anonymity": "Skor rekan dan bawahan baru tampil jika minimal tiga orang di kelompok itu sudah mengisi.",
+    "eyebrow": "Penilaian kinerja 360°",
+    "titleA": "Satu orang,",
+    "titleB": "empat sudut pandang.",
+    "tryDemo": "Coba demo",
+    "trust": [
+      "Anonim sejak awal",
+      "Bahasa Indonesia & Inggris",
+      "Gratis dicoba, tanpa daftar"
+    ],
+    "preview": {
+      "label": "Contoh laporan",
+      "who": "Laras · Senior Tutor",
+      "cycle": "Siklus · Dirilis",
+      "skills": [
+        "Komunikasi",
+        "Kepemimpinan",
+        "Kerja sama",
+        "Inisiatif",
+        "Keahlian"
+      ],
+      "gap": "Selisih terbesar",
+      "gapSkill": "Inisiatif",
+      "gapBody": "Diri sendiri menilai lebih tinggi dari rekan",
+      "anon": "Rekan: 4 respons · anonim"
+    },
+    "viewsTitle": "Tiap kelompok melihat hal berbeda",
+    "viewsLead": "Satu skor rata-rata menyembunyikan itu. 360 Scoring memisahkan tiap kelompok supaya selisihnya terlihat.",
+    "views": {
+      "manager": "Melihat hasil dan prioritas.",
+      "peer": "Melihat kerja sama sehari-hari.",
+      "report": "Melihat kepemimpinan dari dekat.",
+      "self": "Melihat niat dan usaha."
+    },
+    "featuresTitle": "Dibuat untuk siklus penilaian sungguhan",
+    "features": [
+      {
+        "title": "Anonim dengan ambang batas",
+        "body": "Skor rekan dan bawahan disembunyikan sampai minimal tiga orang mengisi."
+      },
+      {
+        "title": "Template yang bisa dipakai ulang",
+        "body": "Susun pernyataan per kompetensi sekali, pakai lagi di tiap siklus."
+      },
+      {
+        "title": "Undang lewat email atau CSV",
+        "body": "Masukkan satu tim sekaligus, termasuk siapa atasan siapa."
+      },
+      {
+        "title": "Tahapan yang jelas",
+        "body": "Draf, nominasi, penilaian, ditutup, dirilis. Semua tahu langkah berikutnya."
+      },
+      {
+        "title": "Pengingat di aplikasi",
+        "body": "Nominasi dan penilaian yang tertunda muncul di daftar tugas masing-masing."
+      },
+      {
+        "title": "Dua bahasa",
+        "body": "Ganti antara Bahasa Indonesia dan Inggris kapan saja."
+      }
+    ],
+    "ctaTitle": "Jalankan siklus 360° pertamamu",
+    "ctaBody": "Siapkan dalam hitungan menit, atau lihat-lihat demonya dulu.",
+    "footer": "360 Scoring · aplikasi feedback 360°"
   },
   "auth": {
     "email": "Email kerja",

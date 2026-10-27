@@ -1,69 +1,49 @@
 import clsx from 'clsx'
 
 /**
- * The 360° ring: four arcs, one per rater group.
- * Order (clockwise from top): manager, peer, direct report, self.
+ * The 360 Scoring mark: a feedback ring (the full circle of reviewers) with a check
+ * mark (the assessment) whose long stroke breaks out of the ring (growth after it).
  */
-const GROUPS = [
-  { key: 'manager', color: 'var(--color-manager)' },
-  { key: 'peer', color: 'var(--color-peer)' },
-  { key: 'report', color: 'var(--color-report)' },
-  { key: 'self', color: 'var(--color-self)' },
-] as const
+const RING = 'M 43.6 21.4 A 22 22 0 1 1 6.7 31.3'
+const CHECK = 'M 6.7 31.3 L 25 44 L 57 5.1'
 
-function arc(cx: number, cy: number, r: number, startDeg: number, endDeg: number) {
-  const toXY = (deg: number) => {
-    const rad = ((deg - 90) * Math.PI) / 180
-    return [cx + r * Math.cos(rad), cy + r * Math.sin(rad)]
-  }
-  const [x1, y1] = toXY(startDeg)
-  const [x2, y2] = toXY(endDeg)
-  return `M ${x1.toFixed(2)} ${y1.toFixed(2)} A ${r} ${r} 0 0 1 ${x2.toFixed(2)} ${y2.toFixed(2)}`
-}
+const TONES = {
+  color: { ring: 'var(--color-brand)', check: 'var(--color-manager)' },
+  light: { ring: '#FFFFFF', check: '#3FD1B0' },
+  mono: { ring: 'currentColor', check: 'currentColor' },
+} as const
 
-type DialProps = {
+type MarkProps = {
   size?: number
-  stroke?: number
-  gap?: number
+  tone?: keyof typeof TONES
   animate?: boolean
   className?: string
 }
 
-export function Dial({ size = 32, stroke, gap = 10, animate = false, className }: DialProps) {
-  const sw = stroke ?? Math.max(3, size * 0.14)
-  const r = (size - sw) / 2
-  const c = size / 2
-  const segLen = ((90 - gap) / 360) * 2 * Math.PI * r
-
+export function Mark({ size = 32, tone = 'color', animate = false, className }: MarkProps) {
+  const c = TONES[tone]
+  const draw = (delay: number, dur: number) =>
+    animate
+      ? ({ strokeDasharray: 1, strokeDashoffset: 1, ['--len' as string]: 1, animation: `draw-arc ${dur}ms cubic-bezier(.2,.7,.2,1) ${delay}ms forwards` } as React.CSSProperties)
+      : undefined
   return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" aria-hidden className={clsx('shrink-0', className)}>
-      {GROUPS.map((g, i) => (
-        <path
-          key={g.key}
-          d={arc(c, c, r, i * 90 + gap / 2, (i + 1) * 90 - gap / 2)}
-          stroke={g.color}
-          strokeWidth={sw}
-          strokeLinecap="round"
-          style={
-            animate
-              ? ({
-                  '--len': segLen,
-                  strokeDasharray: segLen,
-                  strokeDashoffset: segLen,
-                  animation: `draw-arc 700ms cubic-bezier(.2,.7,.2,1) ${150 + i * 140}ms forwards`,
-                } as React.CSSProperties)
-              : undefined
-          }
-        />
-      ))}
+    <svg width={size} height={size} viewBox="0 0 64 64" fill="none" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round"
+      aria-hidden className={clsx('shrink-0', className)}>
+      <path d={RING} stroke={c.ring} pathLength={1} style={draw(100, 800)} />
+      <path d={CHECK} stroke={c.check} pathLength={1} style={draw(650, 650)} />
     </svg>
   )
 }
 
-export function Logo({ className }: { className?: string }) {
+/** Kept for older imports: the mark at the size the ring used to be drawn. */
+export function Dial({ size = 32, animate = false, className }: { size?: number; stroke?: number; gap?: number; animate?: boolean; className?: string }) {
+  return <Mark size={size} animate={animate} className={className} />
+}
+
+export function Logo({ className, tone = 'color' }: { className?: string; tone?: keyof typeof TONES }) {
   return (
     <span className={clsx('inline-flex items-center gap-2 font-extrabold tracking-tight', className)}>
-      <Dial size={26} gap={14} />
+      <Mark size={28} tone={tone} />
       <span className="text-[17px]">360 Scoring</span>
     </span>
   )

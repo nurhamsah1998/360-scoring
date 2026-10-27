@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { ClipboardCheck, FileBarChart, ListChecks, ShieldCheck, Workflow, type LucideIcon } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Dial } from './Dial'
+import { Mark } from './Dial'
 import { Button } from './ui'
 
 /**
@@ -84,7 +84,7 @@ export function WelcomeTour({ userId, isAdmin, forceOpen = false, onClose }: {
                 <Icon className="size-10" aria-hidden />
               </span>
             ) : (
-              <Dial size={104} stroke={14} gap={10} animate />
+              <Mark size={96} animate />
             )}
             <button type="button" onClick={finish}
               className="absolute right-3 top-3 rounded-md px-2 py-1 text-sm font-semibold text-muted hover:bg-ink/5 hover:text-ink">

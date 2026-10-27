@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Link, Navigate, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { useAuth } from '../auth/AuthProvider'
 import { DemoBanner } from '../components/Demo'
-import { Dial, Logo } from '../components/Dial'
+import { Logo, Mark } from '../components/Dial'
 import { LanguageSwitch } from '../components/LanguageSwitch'
 import { NotificationBell } from '../components/NotificationBell'
 import { PendingInvites } from '../components/PendingInvites'
@@ -61,7 +61,7 @@ export default function AppLayout() {
         <header className="glass-bar sticky top-0 z-20 border-b print:hidden">
           <div className="mx-auto flex max-w-6xl items-center gap-2 px-3 py-2.5 sm:gap-3 sm:px-8 sm:py-3">
             <Link to="/" aria-label="360 Scoring home" className="shrink-0">
-              <span className="md:hidden"><Dial size={28} gap={14} /></span>
+              <span className="md:hidden"><Mark size={30} /></span>
               <span className="hidden md:inline"><Logo /></span>
             </Link>
 
