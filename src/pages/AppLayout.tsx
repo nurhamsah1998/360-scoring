@@ -148,7 +148,7 @@ function OrgPicker({ orgs, current, onPick }: { orgs: MyOrg[]; current: MyOrg; o
         id="org"
         value={current.org.slug}
         onChange={(e) => onPick(e.target.value)}
-        className="w-full min-w-0 appearance-none truncate rounded-full border border-white/70 bg-white/60 py-1.5 pl-3.5 pr-8 text-sm font-semibold shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] md:max-w-[220px] md:rounded-lg md:border-line md:bg-paper/60"
+        className="w-full min-w-0 appearance-none truncate rounded-full border border-white/80 bg-white/80 py-1.5 pl-3.5 pr-8 text-sm font-semibold shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] md:max-w-[220px] md:rounded-lg md:border-line md:bg-paper/60"
       >
         {orgs.map((o) => <option key={o.org.id} value={o.org.slug}>{o.org.name}</option>)}
       </select>
@@ -180,7 +180,7 @@ function MobileMenu({ open, onClose, name, email, initials: ini, canCreateOrg }:
       className="mx-auto mb-0 mt-auto w-full max-w-md bg-transparent p-0 backdrop:bg-ink/30 backdrop:backdrop-blur-[2px] md:hidden"
     >
       {open && (
-        <div className="glass-float m-3 rounded-3xl p-3 pb-safe [animation:sheet-up_220ms_cubic-bezier(.2,.8,.2,1)]">
+        <div className="glass-panel m-3 rounded-3xl p-3 pb-safe [animation:sheet-up_220ms_cubic-bezier(.2,.8,.2,1)]">
           <div className="flex items-center gap-3 px-2 pb-3 pt-1">
             <span className="grid size-11 place-items-center rounded-full bg-ink text-sm font-bold text-white">{ini}</span>
             <div className="min-w-0 flex-1">

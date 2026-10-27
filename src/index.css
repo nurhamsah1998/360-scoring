@@ -5,7 +5,7 @@
 
   /* Surfaces & ink — "card" is frosted glass over the aurora background */
   --color-paper: #EEF2F8;
-  --color-card: rgb(255 255 255 / 0.66);
+  --color-card: rgb(255 255 255 / 0.82);
   --color-line: rgb(23 32 46 / 0.10);
   --color-ink: #17202E;
   --color-muted: #536074;
@@ -61,17 +61,26 @@
       0 10px 30px -18px rgb(23 32 46 / 0.30);
   }
   .glass-bar {
-    background: rgb(255 255 255 / 0.58);
+    background: rgb(255 255 255 / 0.80);
     -webkit-backdrop-filter: blur(22px) saturate(170%);
     backdrop-filter: blur(22px) saturate(170%);
     border-color: rgb(255 255 255 / 0.7);
   }
   .glass-float {
-    background: rgb(255 255 255 / 0.72);
+    background: rgb(255 255 255 / 0.88);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
     backdrop-filter: blur(24px) saturate(180%);
     border: 1px solid rgb(255 255 255 / 0.8);
     box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.9), 0 18px 40px -16px rgb(23 32 46 / 0.35);
+  }
+  /* Anything that sits on top of page content (dialogs, popovers, tooltips) must stay readable:
+     near-opaque with a blur, never the see-through card colour. */
+  .glass-panel {
+    background: rgb(255 255 255 / 0.96);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgb(255 255 255 / 0.9);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.9), 0 24px 60px -20px rgb(23 32 46 / 0.45);
   }
   .pb-safe { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
 }
@@ -79,17 +88,17 @@
 /* Fall back to solid surfaces when the browser can't blur or the person asked for less transparency. */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   :root { --color-card: #FFFFFF; }
-  .glass-bar, .glass-float { background: #FFFFFF; }
+  .glass-bar, .glass-float, .glass-panel { background: #FFFFFF; }
 }
 @media (prefers-reduced-transparency: reduce) {
   :root { --color-card: #FFFFFF; }
-  .glass-bar, .glass-float { background: #FFFFFF; }
+  .glass-bar, .glass-float, .glass-panel { background: #FFFFFF; }
 }
 
 @media print {
   body::before { display: none; }
   :root { --color-card: #FFFFFF; }
-  .bg-card, .glass-bar, .glass-float { backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; }
+  .bg-card, .glass-bar, .glass-float, .glass-panel { backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; }
 }
 
 @keyframes draw-arc {

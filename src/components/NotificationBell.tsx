@@ -102,7 +102,7 @@ export function NotificationBell({ orgId }: { orgId: string }) {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full z-30 mt-2 w-[min(360px,calc(100vw-24px))] overflow-hidden rounded-xl border border-line bg-card shadow-[0_24px_60px_-20px_rgba(23,32,46,0.45)]">
+        <div className="absolute right-0 top-full z-30 mt-2 w-[min(360px,calc(100vw-24px))] overflow-hidden rounded-xl glass-panel">
           <div className="flex items-center justify-between border-b border-line px-4 py-3">
             <h2 className="font-bold">{t('notifications.title')}</h2>
             {unread > 0 && (

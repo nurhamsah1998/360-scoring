@@ -119,7 +119,7 @@ export function Dialog({ open, onClose, title, children }: { open: boolean; onCl
       ref={ref}
       onClose={onClose}
       onClick={(e) => { if (e.target === ref.current) onClose() }}
-      className="m-auto w-[min(520px,calc(100vw-24px))] rounded-2xl border border-line bg-card p-0 text-ink shadow-[0_24px_60px_-20px_rgba(23,32,46,0.45)] backdrop:bg-ink/40"
+      className="m-auto w-[min(520px,calc(100vw-24px))] glass-panel rounded-2xl p-0 text-ink backdrop:bg-ink/40"
     >
       {open && (
         <div className="max-h-[85dvh] overflow-y-auto p-5 sm:p-6">

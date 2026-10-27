@@ -83,7 +83,7 @@ export function RadarChart({ report, series }: Props) {
       </svg>
 
       {active != null && (
-        <div className="pointer-events-none absolute right-0 top-0 z-10 rounded-lg border border-line bg-card px-3 py-2 text-sm shadow-[0_12px_30px_-12px_rgba(23,32,46,0.35)]" role="status">
+        <div className="pointer-events-none absolute right-0 top-0 z-10 glass-panel rounded-lg px-3 py-2 text-sm" role="status">
           <p className="font-bold">{comps[active].name}</p>
           <ul className="mt-1 flex flex-col gap-0.5">
             {series.map((s) => (

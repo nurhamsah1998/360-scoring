@@ -189,7 +189,7 @@ function HeroPreview() {
 
   return (
     <div className="relative mx-auto w-full max-w-[460px] lg:mr-0">
-      <figure className="relative rounded-3xl border border-white/60 bg-white/90 p-5 text-ink shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)] sm:p-6"
+      <figure className="relative rounded-3xl border border-white/60 bg-white/95 p-5 text-ink shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)] sm:p-6"
         aria-label={p('label')}>
         <div className="flex items-start justify-between gap-3">
           <div>

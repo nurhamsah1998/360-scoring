@@ -73,7 +73,7 @@ export function WelcomeTour({ userId, isAdmin, forceOpen = false, onClose }: {
       ref={ref}
       onClose={finish}
       aria-label={t('tour.label')}
-      className="m-auto w-[min(440px,calc(100vw-24px))] overflow-hidden rounded-2xl border border-line bg-card p-0 text-ink shadow-[0_24px_60px_-20px_rgba(23,32,46,0.45)] backdrop:bg-ink/50"
+      className="m-auto w-[min(440px,calc(100vw-24px))] glass-panel overflow-hidden rounded-2xl p-0 text-ink backdrop:bg-ink/50"
     >
       {open && (
         <div className="flex flex-col">
