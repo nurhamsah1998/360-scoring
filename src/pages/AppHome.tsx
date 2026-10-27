@@ -8,6 +8,7 @@ import { formatDate } from '../lib/cycles'
 import { useOrg } from '../lib/org-context'
 import { useProfile } from '../lib/orgs'
 import { useMyTasks, type Task } from '../lib/tasks'
+import { replayTour } from '../components/WelcomeTour'
 
 const SETUP = [
   { key: 'members', icon: Users, accent: 'border-t-manager', to: '/app/members' },
@@ -86,6 +87,9 @@ export default function AppHome() {
           ))}
         </ol>
       )}
+      <p className="mt-10 text-sm">
+        <button type="button" onClick={replayTour} className="font-semibold text-muted underline-offset-2 hover:text-ink hover:underline">{t('tour.replay')}</button>
+      </p>
     </>
   )
 }

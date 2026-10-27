@@ -511,5 +511,40 @@
     "switch": "Switch to:",
     "own": "Create your own",
     "noInvites": "Inviting and importing people is turned off in the demo."
+  },
+  "tour": {
+    "label": "Welcome tour",
+    "skip": "Skip",
+    "back": "Back",
+    "next": "Next",
+    "done": "Get started",
+    "replay": "Show the intro again",
+    "step": "Step {{n}} of {{total}}",
+    "slides": {
+      "welcome": {
+        "title": "Welcome to 360 Scoring",
+        "body": "See how your manager, peers, direct reports and you yourself rate the same skills — side by side."
+      },
+      "setup": {
+        "title": "Set up your organization",
+        "body": "As an admin you add people (one by one or from a CSV), set who reports to whom, and prepare a question template."
+      },
+      "cycle": {
+        "title": "Run a cycle in five stages",
+        "body": "Draft → Nominations → Reviews → Closed → Released. Each stage unlocks the next step for everyone."
+      },
+      "nominate": {
+        "title": "Nominate and review",
+        "body": "Pick colleagues to review you, then rate the people you're asked to review from 1 to 5. Answers save as you go."
+      },
+      "anonymous": {
+        "title": "Honest because it's anonymous",
+        "body": "Peer and direct-report answers only appear once at least three people in that group respond — and names are never shown."
+      },
+      "report": {
+        "title": "Read your report",
+        "body": "Once released, compare your self-view with how others see you, skill by skill, and find blind spots and hidden strengths."
+      }
+    }
   }
 }

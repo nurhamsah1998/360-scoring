@@ -511,5 +511,40 @@
     "switch": "Ganti ke:",
     "own": "Buat milik Anda",
     "noInvites": "Mengundang dan mengimpor anggota dimatikan di demo."
+  },
+  "tour": {
+    "label": "Tur pengenalan",
+    "skip": "Lewati",
+    "back": "Kembali",
+    "next": "Lanjut",
+    "done": "Mulai",
+    "replay": "Tampilkan pengenalan lagi",
+    "step": "Langkah {{n}} dari {{total}}",
+    "slides": {
+      "welcome": {
+        "title": "Selamat datang di 360 Scoring",
+        "body": "Lihat bagaimana atasan, rekan, bawahan, dan Anda sendiri menilai kompetensi yang sama — berdampingan."
+      },
+      "setup": {
+        "title": "Siapkan organisasi Anda",
+        "body": "Sebagai admin, Anda menambahkan orang (satu per satu atau lewat CSV), mengatur siapa atasan siapa, dan menyiapkan template pertanyaan."
+      },
+      "cycle": {
+        "title": "Jalankan siklus dalam lima tahap",
+        "body": "Draf → Nominasi → Penilaian → Ditutup → Dirilis. Setiap tahap membuka langkah berikutnya untuk semua orang."
+      },
+      "nominate": {
+        "title": "Nominasikan dan nilai",
+        "body": "Pilih rekan yang akan menilai Anda, lalu beri skor 1–5 untuk orang yang perlu Anda nilai. Jawaban tersimpan otomatis."
+      },
+      "anonymous": {
+        "title": "Jujur karena anonim",
+        "body": "Jawaban rekan dan bawahan baru tampil jika minimal tiga orang di kelompok itu sudah mengisi — dan nama tidak pernah ditampilkan."
+      },
+      "report": {
+        "title": "Baca laporan Anda",
+        "body": "Setelah dirilis, bandingkan penilaian diri dengan pandangan orang lain per kompetensi, dan temukan blind spot serta kekuatan tersembunyi."
+      }
+    }
   }
 }

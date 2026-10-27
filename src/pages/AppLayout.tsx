@@ -7,6 +7,7 @@ import { Logo } from '../components/Dial'
 import { DemoBanner } from '../components/Demo'
 import { LanguageSwitch } from '../components/LanguageSwitch'
 import { NotificationBell } from '../components/NotificationBell'
+import { WelcomeTour } from '../components/WelcomeTour'
 import { PendingInvites } from '../components/PendingInvites'
 import { Alert, Spinner } from '../components/ui'
 import i18n, { currentLang } from '../i18n'
@@ -102,6 +103,7 @@ export default function AppLayout() {
 
         <main className="mx-auto max-w-6xl px-4 py-8 sm:px-8 sm:py-10">
           <PendingInvites className="mb-8 print:hidden" />
+          {session && <WelcomeTour key={session.user.id} userId={session.user.id} isAdmin={current.role === 'admin'} />}
           <Outlet />
         </main>
 
