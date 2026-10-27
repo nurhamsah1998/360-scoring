@@ -14,11 +14,12 @@
   --color-brand: #17406B;
   --color-brand-hover: #0F2F52;
 
-  /* Rater groups — used consistently from logo to report charts */
-  --color-self: #6B47CF;
-  --color-manager: #0E7C70;
+  /* Rater groups — used consistently from logo to report charts.
+     Validated with the dataviz palette checker (all pairs, incl. colour-blind separation, light surface). */
+  --color-self: #8B2F9C;
+  --color-manager: #00806A;
   --color-peer: #C97A1E;
-  --color-report: #2F67D0;
+  --color-report: #4A90E2;
 
   --color-danger: #B42318;
   --color-success: #12754A;

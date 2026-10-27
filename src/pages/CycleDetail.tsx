@@ -1,4 +1,4 @@
-import { ArrowLeft, ChevronRight, Info, Trash2, UserPlus, Users } from 'lucide-react'
+import { ArrowLeft, ChevronRight, FileBarChart, Info, Trash2, UserPlus, Users } from 'lucide-react'
 import { useEffect, useMemo, useState, type FormEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
@@ -47,6 +47,9 @@ export default function CycleDetail() {
         {cycle.status === 'nomination' && <ManagerApprovals {...common} meId={membershipId} />}
         {cycle.status === 'review' && myPending > 0 && (
           <Alert tone="info">{t('cycles.myReviews', { count: myPending })} <Link to="/app/reviews" className="font-semibold text-brand underline-offset-2 hover:underline">{t('nav.reviews')} →</Link></Alert>
+        )}
+        {(cycle.status === 'closed' || cycle.status === 'released') && (
+          <ReportsSection cycle={cycle} members={members ?? []} participants={participants ?? []} meId={membershipId} isAdmin={isAdmin} />
         )}
         {isAdmin && <AdminSections {...common} assignments={assignments ?? []} />}
       </div>
@@ -267,4 +270,34 @@ function toForm(c: Cycle) {
     peer_min: String(c.peer_min),
     peer_max: String(c.peer_max),
   }
+}
+
+function ReportsSection({ cycle, members, participants, meId, isAdmin }: { cycle: Cycle; members: Member[]; participants: Participant[]; meId: string; isAdmin: boolean }) {
+  const { t } = useTranslation()
+  const byId = new Map(members.map((m) => [m.id, m]))
+  const visible = participants
+    .filter((p) => isAdmin || p.manager_id === meId || (cycle.status === 'released' && p.reviewee_id === meId))
+    .map((p) => ({ p, m: byId.get(p.reviewee_id) }))
+    .sort((a, b) => (a.p.reviewee_id === meId ? -1 : b.p.reviewee_id === meId ? 1 : (a.m ? displayName(a.m) : '').localeCompare(b.m ? displayName(b.m) : '')))
+  if (visible.length === 0) return null
+  return (
+    <section className="rounded-xl border border-line border-t-4 border-t-self bg-card p-5">
+      <h2 className="flex items-center gap-2 text-lg font-bold"><FileBarChart className="size-5 text-muted" aria-hidden />{t('report.reportsTitle')}</h2>
+      {isAdmin && <p className="mt-1 text-[15px] text-muted">{t('report.reportsHelpAdmin')}</p>}
+      <ul className="mt-4 divide-y divide-line rounded-lg border border-line">
+        {visible.map(({ p, m }) => (
+          <li key={p.reviewee_id}>
+            <Link to={`/app/cycles/${cycle.id}/reports/${p.reviewee_id}`} className="flex items-center gap-3 px-3 py-3 hover:bg-ink/[0.025]">
+              <span className="min-w-0 flex-1 truncate font-semibold">
+                {p.reviewee_id === meId ? t('report.yourReport') : m ? displayName(m) : '—'}
+                {m?.job_title && p.reviewee_id !== meId && <span className="font-normal text-muted"> · {m.job_title}</span>}
+              </span>
+              <span className="text-sm font-semibold text-brand">{t('report.viewReport')}</span>
+              <ChevronRight className="size-4 text-muted" aria-hidden />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
 }

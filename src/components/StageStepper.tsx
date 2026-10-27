@@ -11,7 +11,7 @@ export function StageBadge({ stage }: { stage: Stage }) {
         'inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold',
         stage === 'draft' && 'bg-ink/8 text-muted',
         stage === 'nomination' && 'bg-peer/12 text-[#8a5212]',
-        stage === 'review' && 'bg-report/10 text-report',
+        stage === 'review' && 'bg-report/12 text-[#245e9f]',
         stage === 'closed' && 'bg-self/10 text-self',
         stage === 'released' && 'bg-success/10 text-success',
       )}

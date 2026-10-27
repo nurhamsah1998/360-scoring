@@ -42,7 +42,7 @@ export default function AppLayout() {
   return (
     <OrgContext.Provider value={{ ...current, isAdmin: current.role === 'admin' }}>
       <div className="min-h-dvh pb-20 md:pb-0">
-        <header className="border-b border-line bg-card">
+        <header className="border-b border-line bg-card print:hidden">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-3 gap-y-2 px-4 py-3 sm:px-8">
             <Link to="/" aria-label="360 Scoring home"><Logo /></Link>
             <div className="order-last flex w-full items-center gap-2 sm:order-none sm:ml-3 sm:w-auto">
@@ -95,12 +95,12 @@ export default function AppLayout() {
         </header>
 
         <main className="mx-auto max-w-6xl px-4 py-8 sm:px-8 sm:py-10">
-          <PendingInvites className="mb-8" />
+          <PendingInvites className="mb-8 print:hidden" />
           <Outlet />
         </main>
 
         {/* Bottom tab bar on phones */}
-        <nav className="fixed inset-x-0 bottom-0 z-10 flex border-t border-line bg-card md:hidden" aria-label="Main">
+        <nav className="fixed inset-x-0 bottom-0 z-10 flex border-t border-line bg-card md:hidden print:hidden" aria-label="Main">
           {nav.map(({ to, end, icon: Icon, label }) => (
             <NavLink
               key={to}

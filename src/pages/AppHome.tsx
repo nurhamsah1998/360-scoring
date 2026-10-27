@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { CalendarRange, CheckCircle2, ChevronRight, ClipboardCheck, ListChecks, UserCheck, Users, UsersRound } from 'lucide-react'
+import { CalendarRange, CheckCircle2, ChevronRight, ClipboardCheck, FileBarChart, ListChecks, UserCheck, Users, UsersRound } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { Spinner } from '../components/ui'
@@ -19,6 +19,7 @@ const TASK_STYLE = {
   nominate: { icon: UsersRound, bar: 'bg-peer' },
   approve: { icon: UserCheck, bar: 'bg-manager' },
   review: { icon: ClipboardCheck, bar: 'bg-report' },
+  report: { icon: FileBarChart, bar: 'bg-self' },
 } as const
 
 export default function AppHome() {
@@ -31,7 +32,8 @@ export default function AppHome() {
   const label = (task: Task) =>
     task.kind === 'nominate' ? t('tasks.nominate', { cycle: task.cycle })
       : task.kind === 'approve' ? t('tasks.approve', { count: task.count, cycle: task.cycle })
-        : t('tasks.review', { count: task.count, cycle: task.cycle })
+        : task.kind === 'report' ? t('tasks.report', { cycle: task.cycle })
+          : t('tasks.review', { count: task.count, cycle: task.cycle })
 
   return (
     <>
@@ -51,7 +53,7 @@ export default function AppHome() {
               const S = TASK_STYLE[task.kind]
               return (
                 <li key={task.kind + task.cycleId}>
-                  <Link to={task.kind === 'review' ? '/app/reviews' : `/app/cycles/${task.cycleId}`} className="flex items-center gap-3 overflow-hidden rounded-xl border border-line bg-card pr-4 hover:border-ink/30">
+                  <Link to={task.kind === 'review' ? '/app/reviews' : task.kind === 'report' ? `/app/cycles/${task.cycleId}/reports/${task.revieweeId}` : `/app/cycles/${task.cycleId}`} className="flex items-center gap-3 overflow-hidden rounded-xl border border-line bg-card pr-4 hover:border-ink/30">
                     <span className={clsx('w-1.5 self-stretch', S.bar)} aria-hidden />
                     <S.icon className="size-5 shrink-0 text-muted" aria-hidden />
                     <span className="min-w-0 flex-1 py-3.5">

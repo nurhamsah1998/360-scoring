@@ -373,7 +373,8 @@
     "approve_other": "Setujui {{count}} nominasi untuk {{cycle}}",
     "review_one": "{{count}} penilaian perlu diisi di {{cycle}}",
     "review_other": "{{count}} penilaian perlu diisi di {{cycle}}",
-    "none": "Semua tugas sudah beres."
+    "none": "Semua tugas sudah beres.",
+    "report": "Laporan Anda untuk {{cycle}} sudah tersedia"
   },
   "reviews": {
     "title": "Penilaian Anda",
@@ -437,5 +438,51 @@
     "nomination_decided_rejected": "Nominasi {{peer}} Anda ditolak ({{cycle}}).",
     "review_open": "Penilaian untuk {{cycle}} sudah dibuka.",
     "report_released": "Laporan Anda untuk {{cycle}} sudah tersedia."
+  },
+  "report": {
+    "title": "Laporan 360°",
+    "back": "Kembali ke siklus",
+    "print": "Cetak",
+    "responses": "Jumlah respons",
+    "groups": {
+      "self": "Diri sendiri",
+      "manager": "Atasan",
+      "peer": "Rekan",
+      "direct_report": "Bawahan",
+      "others": "Orang lain"
+    },
+    "groupCount": "{{submitted}} dari {{total}}",
+    "hidden": "Disembunyikan — kurang dari {{min}} respons",
+    "hiddenShort": "Disembunyikan",
+    "othersHelp": "Orang lain menggabungkan atasan dan setiap kelompok anonim dengan minimal {{min}} respons.",
+    "othersHidden": "Respons dari orang lain belum cukup untuk ditampilkan sebagai skor gabungan.",
+    "summary": "Ringkasan",
+    "selfVsOthers": "Cara Anda menilai diri vs. cara orang lain menilai Anda",
+    "selfVsOthersOther": "Penilaian diri vs. penilaian orang lain",
+    "bySkill": "Per kompetensi",
+    "chartToggle": "Tampilkan atau sembunyikan kelompok",
+    "table": "Skor per kompetensi",
+    "skill": "Kompetensi",
+    "statements": "Pernyataan",
+    "showStatements": "Lihat pernyataan",
+    "naCount_one": "{{count}} tidak dapat menilai",
+    "naCount_other": "{{count}} tidak dapat menilai",
+    "gaps": "Di mana pandangan berbeda",
+    "gapsHelp": "Kompetensi yang selisih penilaian diri dan penilaian orang lainnya minimal 0,5.",
+    "blindSpot": "Dinilai lebih tinggi oleh diri sendiri",
+    "blindSpotHelp": "Orang lain melihatnya tidak sekuat itu — baik untuk meminta contoh konkret.",
+    "hiddenStrength": "Dinilai lebih tinggi oleh orang lain",
+    "hiddenStrengthHelp": "Orang lain melihat kekuatan yang lebih besar di sini daripada penilaian diri.",
+    "noGaps": "Penilaian diri dan penilaian orang lain berdekatan di semua kompetensi.",
+    "needOthers": "Tampil setelah skor dari orang lain tersedia.",
+    "needSelf": "Tampil setelah penilaian diri dikirim.",
+    "comments": "Komentar",
+    "noComments": "Tidak ada komentar.",
+    "notAvailable": "Laporan ini belum tersedia.",
+    "scaleNote": "Skor adalah rata-rata pada skala 1–5. Jawaban “Tidak dapat menilai” tidak dihitung.",
+    "reportsTitle": "Laporan",
+    "reportsHelpAdmin": "Admin dan atasan masing-masing bisa melihat laporan setelah penilaian ditutup. Karyawan melihat laporannya sendiri setelah dirilis.",
+    "viewReport": "Lihat laporan",
+    "yourReport": "Laporan Anda"
   }
 }

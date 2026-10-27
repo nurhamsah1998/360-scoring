@@ -25,5 +25,5 @@ Edge functions live in `supabase/functions/` (`invite-members` sends invitations
 - [x] Phase 2 — Members, invitations, CSV import
 - [x] Phase 3 — Templates, cycles, nominations
 - [x] Phase 4 — Reviews
-- [ ] Phase 5 — Reports
+- [x] Phase 5 — Reports
 - [ ] Phase 6 — Demo mode & polish

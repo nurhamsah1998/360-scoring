@@ -373,7 +373,8 @@
     "approve_other": "Approve {{count}} nominations for {{cycle}}",
     "review_one": "{{count}} review to complete in {{cycle}}",
     "review_other": "{{count}} reviews to complete in {{cycle}}",
-    "none": "You're all caught up."
+    "none": "You're all caught up.",
+    "report": "Your report for {{cycle}} is ready"
   },
   "reviews": {
     "title": "Your reviews",
@@ -437,5 +438,51 @@
     "nomination_decided_rejected": "Your nomination of {{peer}} was declined ({{cycle}}).",
     "review_open": "Reviews are open for {{cycle}}.",
     "report_released": "Your report for {{cycle}} is ready."
+  },
+  "report": {
+    "title": "360° report",
+    "back": "Back to cycle",
+    "print": "Print",
+    "responses": "Responses",
+    "groups": {
+      "self": "Self",
+      "manager": "Manager",
+      "peer": "Peers",
+      "direct_report": "Direct reports",
+      "others": "Others"
+    },
+    "groupCount": "{{submitted}} of {{total}}",
+    "hidden": "Hidden — fewer than {{min}} responses",
+    "hiddenShort": "Hidden",
+    "othersHelp": "Others combines the manager and every anonymous group with at least {{min}} responses.",
+    "othersHidden": "Not enough responses from others to show a combined score.",
+    "summary": "Overall",
+    "selfVsOthers": "How you see yourself vs. how others see you",
+    "selfVsOthersOther": "Self-view vs. how others see them",
+    "bySkill": "By skill",
+    "chartToggle": "Show or hide a group",
+    "table": "Scores by skill",
+    "skill": "Skill",
+    "statements": "Statements",
+    "showStatements": "Show statements",
+    "naCount_one": "{{count}} not able to rate",
+    "naCount_other": "{{count}} not able to rate",
+    "gaps": "Where views differ",
+    "gapsHelp": "Skills where the self-view and others' view are at least 0.5 apart.",
+    "blindSpot": "Rated higher by self",
+    "blindSpotHelp": "Others see this less strongly — worth asking for examples.",
+    "hiddenStrength": "Rated higher by others",
+    "hiddenStrengthHelp": "Others see more strength here than the self-view does.",
+    "noGaps": "Self-view and others' view are close on every skill.",
+    "needOthers": "Shown once others' scores are available.",
+    "needSelf": "Shown once a self-review is submitted.",
+    "comments": "Comments",
+    "noComments": "No comments.",
+    "notAvailable": "This report isn't available yet.",
+    "scaleNote": "Scores are averages on a 1–5 scale. “Not able to rate” answers are left out.",
+    "reportsTitle": "Reports",
+    "reportsHelpAdmin": "Admins and each person's manager can see reports once reviews are closed. People see their own after release.",
+    "viewReport": "View report",
+    "yourReport": "Your report"
   }
 }

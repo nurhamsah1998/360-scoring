@@ -5,6 +5,7 @@ export type Task =
   | { kind: 'nominate'; cycleId: string; cycle: string; count: number; min: number; due: string | null }
   | { kind: 'approve'; cycleId: string; cycle: string; count: number; due: string | null }
   | { kind: 'review'; cycleId: string; cycle: string; count: number; due: string | null }
+  | { kind: 'report'; cycleId: string; cycle: string; revieweeId: string; due: null }
 
 /** What the signed-in member should do next across running cycles. */
 export function useMyTasks(orgId: string, meId: string) {
@@ -15,7 +16,7 @@ export function useMyTasks(orgId: string, meId: string) {
         .from('cycles')
         .select('id, name, status, peer_min, nomination_due, review_due')
         .eq('org_id', orgId)
-        .in('status', ['nomination', 'review'])
+        .in('status', ['nomination', 'review', 'released'])
       if (error) throw error
       if (!cycles?.length) return []
       const ids = cycles.map((c) => c.id)
@@ -38,6 +39,8 @@ export function useMyTasks(orgId: string, meId: string) {
           const reports = new Set(managed.data!.filter((p) => p.cycle_id === c.id).map((p) => p.reviewee_id))
           const waiting = noms.data!.filter((n) => n.cycle_id === c.id && n.status === 'pending' && reports.has(n.reviewee_id)).length
           if (waiting > 0) tasks.push({ kind: 'approve', cycleId: c.id, cycle: c.name, count: waiting, due: c.nomination_due })
+        } else if (c.status === 'released') {
+          if (mine.data!.some((p) => p.cycle_id === c.id)) tasks.push({ kind: 'report', cycleId: c.id, cycle: c.name, revieweeId: meId, due: null })
         } else {
           const count = asg.data!.filter((a) => a.cycle_id === c.id).length
           if (count > 0) tasks.push({ kind: 'review', cycleId: c.id, cycle: c.name, count, due: c.review_due })
