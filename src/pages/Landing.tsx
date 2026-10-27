@@ -20,7 +20,8 @@ export default function Landing() {
 
   return (
     <div className="min-h-dvh">
-      <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-8">
+      <header className="glass-bar sticky top-0 z-20 border-b md:static md:border-b-0 md:bg-transparent md:backdrop-blur-none">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-8 md:py-4">
         <Logo />
         <div className="flex items-center gap-2">
           <LanguageSwitch />
@@ -30,6 +31,7 @@ export default function Landing() {
           >
             {session ? t('app.orgSwitcher') : t('landing.signIn')}
           </Link>
+        </div>
         </div>
       </header>
 

@@ -3,12 +3,12 @@
 @theme {
   --font-sans: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
 
-  /* Surfaces & ink */
-  --color-paper: #F2F5F9;
-  --color-card: #FFFFFF;
-  --color-line: #D9E0EA;
+  /* Surfaces & ink — "card" is frosted glass over the aurora background */
+  --color-paper: #EEF2F8;
+  --color-card: rgb(255 255 255 / 0.56);
+  --color-line: rgb(23 32 46 / 0.10);
   --color-ink: #17202E;
-  --color-muted: #5B6779;
+  --color-muted: #536074;
 
   /* Brand action */
   --color-brand: #17406B;
@@ -27,14 +27,79 @@
 
 @layer base {
   html { background: var(--color-paper); color: var(--color-ink); }
-  body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+  body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; min-height: 100dvh; }
+
+  /* Aurora: the four rater-group colours, very soft, fixed behind everything (iOS-safe, no background-attachment). */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -10vmax;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(38vmax 38vmax at 8% 6%,  rgb(139 47 156 / 0.28), transparent 70%),
+      radial-gradient(42vmax 42vmax at 96% 12%, rgb(74 144 226 / 0.30), transparent 70%),
+      radial-gradient(40vmax 40vmax at 4% 92%,  rgb(201 122 30 / 0.24), transparent 70%),
+      radial-gradient(44vmax 44vmax at 92% 96%, rgb(0 128 106 / 0.26), transparent 70%),
+      var(--color-paper);
+  }
+
   :focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
   }
 }
 
+/* Glass surfaces. Every bg-card blurs what's behind it; rounded panels also get a light edge and soft depth. */
+@layer components {
+  .bg-card {
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    backdrop-filter: blur(18px) saturate(160%);
+  }
+  .bg-card:is(.rounded-xl, .rounded-2xl, .rounded-3xl) {
+    border-color: rgb(255 255 255 / 0.75);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.85),
+      0 10px 30px -18px rgb(23 32 46 / 0.30);
+  }
+  .glass-bar {
+    background: rgb(255 255 255 / 0.58);
+    -webkit-backdrop-filter: blur(22px) saturate(170%);
+    backdrop-filter: blur(22px) saturate(170%);
+    border-color: rgb(255 255 255 / 0.7);
+  }
+  .glass-float {
+    background: rgb(255 255 255 / 0.72);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgb(255 255 255 / 0.8);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.9), 0 18px 40px -16px rgb(23 32 46 / 0.35);
+  }
+  .pb-safe { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+}
+
+/* Fall back to solid surfaces when the browser can't blur or the person asked for less transparency. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  :root { --color-card: #FFFFFF; }
+  .glass-bar, .glass-float { background: #FFFFFF; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root { --color-card: #FFFFFF; }
+  .glass-bar, .glass-float { background: #FFFFFF; }
+}
+
+@media print {
+  body::before { display: none; }
+  :root { --color-card: #FFFFFF; }
+  .bg-card, .glass-bar, .glass-float { backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; }
+}
+
 @keyframes draw-arc {
   from { stroke-dashoffset: var(--len); }
   to   { stroke-dashoffset: 0; }
+}
+
+@keyframes sheet-up {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
 }

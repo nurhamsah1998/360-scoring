@@ -11,7 +11,7 @@ export function AuthLayout({ title, intro, children, footer }: { title: string; 
         <LanguageSwitch />
       </header>
       <main className="flex flex-1 items-start justify-center px-4 pb-16 pt-6 sm:items-center sm:pt-0">
-        <div className="w-full max-w-[400px]">
+        <div className="w-full max-w-[420px] rounded-3xl border bg-card p-6 sm:p-8">
           <h1 className="text-[28px] font-extrabold leading-tight tracking-tight">{title}</h1>
           {intro && <p className="mt-2 text-muted">{intro}</p>}
           <div className="mt-7">{children}</div>

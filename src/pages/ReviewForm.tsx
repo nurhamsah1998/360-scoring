@@ -124,7 +124,7 @@ function Form({ data }: { data: ReviewData }) {
       : t('reviews.note.anonymous', { min: cycle.min_raters })
 
   return (
-    <div className="mx-auto max-w-3xl pb-28">
+    <div className="mx-auto max-w-3xl pb-32">
       <Link to="/app/reviews" className="inline-flex items-center gap-1 text-sm font-semibold text-muted hover:text-ink">
         <ArrowLeft className="size-4" aria-hidden />{t('reviews.back')}
       </Link>
@@ -227,8 +227,8 @@ function Form({ data }: { data: ReviewData }) {
 
       {/* Sticky footer: progress, save status, submit */}
       {!readOnly && (
-        <div className="fixed inset-x-0 bottom-[61px] z-20 border-t border-line bg-card/95 backdrop-blur md:bottom-0">
-          <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 py-3 sm:px-0">
+        <div className="glass-float fixed inset-x-3 bottom-[calc(max(12px,env(safe-area-inset-bottom))+78px)] z-20 rounded-2xl md:inset-x-0 md:bottom-0 md:rounded-none md:border-x-0 md:border-b-0">
+          <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 py-3 md:px-0">
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2">
                 <div className="hidden h-1.5 w-40 overflow-hidden rounded-full bg-line sm:block" aria-hidden>
