@@ -114,7 +114,7 @@ function RankingHome({ orgId }: { orgId: string }) {
   const bottom = split ? ranked.slice(-3).reverse() : []
 
   return (
-    <section className="mt-10 rounded-2xl border border-line border-t-4 border-t-brand bg-card p-4 sm:p-5">
+    <section className="mt-10 min-w-0 rounded-2xl border border-line border-t-4 border-t-brand bg-card p-4 sm:p-5">
       <div className="flex flex-wrap items-start justify-between gap-3 px-1">
         <div className="min-w-0">
           <h2 className="flex items-center gap-2 text-lg font-bold"><Trophy className="size-5" aria-hidden />{t('ranking.homeTitle')}</h2>
@@ -127,11 +127,11 @@ function RankingHome({ orgId }: { orgId: string }) {
       <div className="mt-3 px-1"><RankLegend /></div>
       {split ? (
         <div className="mt-3 grid gap-x-6 gap-y-2 md:grid-cols-2">
-          <div>
+          <div className="min-w-0">
             <p className="flex items-center gap-1.5 px-2 text-[13px] font-bold uppercase tracking-[0.08em] text-muted"><TrendingUp className="size-4 text-manager" aria-hidden />{t('ranking.top', { count: 3 })}</p>
             {top.map((p) => <RankRow key={p.id} p={p} cycleId={latest.id} avg={avg} />)}
           </div>
-          <div>
+          <div className="min-w-0">
             <p className="flex items-center gap-1.5 px-2 text-[13px] font-bold uppercase tracking-[0.08em] text-muted"><TrendingDown className="size-4 text-peer" aria-hidden />{t('ranking.bottom', { count: 3 })}</p>
             {bottom.map((p) => <RankRow key={p.id} p={p} cycleId={latest.id} avg={avg} />)}
           </div>
