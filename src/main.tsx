@@ -28,6 +28,7 @@ const CycleDetail = lazy(() => import('./pages/CycleDetail'))
 const Reviews = lazy(() => import('./pages/Reviews'))
 const ReviewForm = lazy(() => import('./pages/ReviewForm'))
 const Report = lazy(() => import('./pages/Report'))
+const Ranking = lazy(() => import('./pages/Ranking'))
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { staleTime: 30_000, retry: 1, refetchOnWindowFocus: false } },
@@ -56,6 +57,7 @@ createRoot(document.getElementById('root')!).render(
                 <Route path="cycles" element={<Cycles />} />
                 <Route path="cycles/:id" element={<CycleDetail />} />
                 <Route path="cycles/:id/reports/:revieweeId" element={<Report />} />
+                <Route path="cycles/:id/ranking" element={<Ranking />} />
                 <Route path="reviews" element={<Reviews />} />
                 <Route path="reviews/:id" element={<ReviewForm />} />
               </Route>

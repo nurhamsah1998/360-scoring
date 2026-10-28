@@ -1,4 +1,4 @@
-import { ArrowLeft, ChevronRight, FileBarChart, Info, Trash2, UserPlus, Users } from 'lucide-react'
+import { ArrowLeft, ChevronRight, FileBarChart, Info, Trash2, Trophy, UserPlus, Users } from 'lucide-react'
 import { useEffect, useMemo, useState, type FormEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
@@ -282,7 +282,15 @@ function ReportsSection({ cycle, members, participants, meId, isAdmin }: { cycle
   if (visible.length === 0) return null
   return (
     <section className="rounded-xl border border-line border-t-4 border-t-self bg-card p-5">
-      <h2 className="flex items-center gap-2 text-lg font-bold"><FileBarChart className="size-5 text-muted" aria-hidden />{t('report.reportsTitle')}</h2>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h2 className="flex items-center gap-2 text-lg font-bold"><FileBarChart className="size-5 text-muted" aria-hidden />{t('report.reportsTitle')}</h2>
+        {(isAdmin || participants.some((p) => p.manager_id === meId)) && (
+          <Link to={`/app/cycles/${cycle.id}/ranking`}
+            className="inline-flex items-center gap-1.5 rounded-lg bg-ink px-3 py-2 text-sm font-semibold text-white hover:bg-ink/90">
+            <Trophy className="size-4" aria-hidden />{t('ranking.open')}
+          </Link>
+        )}
+      </div>
       {isAdmin && <p className="mt-1 text-[15px] text-muted">{t('report.reportsHelpAdmin')}</p>}
       <ul className="mt-4 divide-y divide-line rounded-lg border border-line">
         {visible.map(({ p, m }) => (

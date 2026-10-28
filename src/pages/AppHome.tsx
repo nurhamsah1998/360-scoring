@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { CalendarRange, CheckCircle2, ChevronRight, ClipboardCheck, FileBarChart, ListChecks, UserCheck, Users, UsersRound } from 'lucide-react'
+import { CalendarRange, CheckCircle2, ChevronRight, ClipboardCheck, FileBarChart, ListChecks, TrendingDown, TrendingUp, Trophy, UserCheck, Users, UsersRound } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { Spinner } from '../components/ui'
@@ -9,6 +9,9 @@ import { useOrg } from '../lib/org-context'
 import { useProfile } from '../lib/orgs'
 import { useMyTasks, type Task } from '../lib/tasks'
 import { replayTour } from '../components/WelcomeTour'
+import { RankLegend, RankRow } from '../components/RankingParts'
+import { useCycles } from '../lib/cycles'
+import { rankBy, useRanking } from '../lib/ranking'
 
 const SETUP = [
   { key: 'members', icon: Users, accent: 'border-t-manager', to: '/app/members' },
@@ -74,6 +77,8 @@ export default function AppHome() {
         )}
       </section>
 
+      <RankingHome orgId={org.id} />
+
       {isAdmin && (
         <ol className="mt-10 grid gap-4 md:grid-cols-3">
           {SETUP.map(({ key, icon: Icon, accent, to }) => (
@@ -91,5 +96,49 @@ export default function AppHome() {
         <button type="button" onClick={replayTour} className="font-semibold text-muted underline-offset-2 hover:text-ink hover:underline">{t('tour.replay')}</button>
       </p>
     </>
+  )
+}
+
+/** Admins and managers: top and bottom of the most recent closed or released cycle. */
+function RankingHome({ orgId }: { orgId: string }) {
+  const { t } = useTranslation()
+  const { data: cycles } = useCycles(orgId)
+  const latest = cycles?.find((c) => c.status === 'closed' || c.status === 'released')
+  const { data } = useRanking(latest?.id)
+  if (!latest || !data || data.scope === 'none' || !data.available) return null
+  const { ranked } = rankBy(data, 'overall')
+  if (ranked.length === 0) return null
+  const avg = ranked.reduce((s, p) => s + p.value, 0) / ranked.length
+  const split = ranked.length >= 6
+  const top = split ? ranked.slice(0, 3) : ranked
+  const bottom = split ? ranked.slice(-3).reverse() : []
+
+  return (
+    <section className="mt-10 rounded-2xl border border-line border-t-4 border-t-brand bg-card p-4 sm:p-5">
+      <div className="flex flex-wrap items-start justify-between gap-3 px-1">
+        <div className="min-w-0">
+          <h2 className="flex items-center gap-2 text-lg font-bold"><Trophy className="size-5" aria-hidden />{t('ranking.homeTitle')}</h2>
+          <p className="mt-0.5 truncate text-sm text-muted">{data.cycle.name} · {t(`ranking.scope.${data.scope}`)}</p>
+        </div>
+        <Link to={`/app/cycles/${latest.id}/ranking`} className="inline-flex items-center gap-1 text-sm font-semibold text-brand hover:underline">
+          {t('ranking.openFull')}<ChevronRight className="size-4" aria-hidden />
+        </Link>
+      </div>
+      <div className="mt-3 px-1"><RankLegend /></div>
+      {split ? (
+        <div className="mt-3 grid gap-x-6 gap-y-2 md:grid-cols-2">
+          <div>
+            <p className="flex items-center gap-1.5 px-2 text-[13px] font-bold uppercase tracking-[0.08em] text-muted"><TrendingUp className="size-4 text-manager" aria-hidden />{t('ranking.top', { count: 3 })}</p>
+            {top.map((p) => <RankRow key={p.id} p={p} cycleId={latest.id} avg={avg} />)}
+          </div>
+          <div>
+            <p className="flex items-center gap-1.5 px-2 text-[13px] font-bold uppercase tracking-[0.08em] text-muted"><TrendingDown className="size-4 text-peer" aria-hidden />{t('ranking.bottom', { count: 3 })}</p>
+            {bottom.map((p) => <RankRow key={p.id} p={p} cycleId={latest.id} avg={avg} />)}
+          </div>
+        </div>
+      ) : (
+        <div className="mt-2">{top.map((p) => <RankRow key={p.id} p={p} cycleId={latest.id} avg={avg} />)}</div>
+      )}
+    </section>
   )
 }

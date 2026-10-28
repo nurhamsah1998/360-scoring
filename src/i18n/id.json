@@ -609,5 +609,53 @@
         "body": "Setelah dirilis, bandingkan penilaian diri dengan pandangan orang lain per kompetensi, dan temukan blind spot serta kekuatan tersembunyi."
       }
     }
+  },
+  "ranking": {
+    "title": "Peringkat",
+    "eyebrow": "Peringkat 360°",
+    "back": "Kembali ke siklus",
+    "open": "Lihat peringkat",
+    "openFull": "Lihat peringkat lengkap",
+    "scope": {
+      "org": "Seluruh organisasi",
+      "team": "Tim Anda"
+    },
+    "basis": "Urutkan berdasarkan",
+    "overall": "Keseluruhan",
+    "statRanked": "Orang diperingkat",
+    "statRankedOf": "dari {{total}}",
+    "statAvg": "Rata-rata skor",
+    "statTop": "Tertinggi",
+    "statBottom": "Terendah",
+    "top": "{{count}} tertinggi",
+    "bottom": "{{count}} terendah",
+    "order": "Urutan",
+    "all": "Semua peserta",
+    "legendScore": "Skor dari orang lain",
+    "legendSelf": "Penilaian diri",
+    "legendAvg": "Rata-rata",
+    "col": {
+      "rank": "#",
+      "name": "Nama",
+      "score": "Skor",
+      "self": "Diri",
+      "gap": "Diri − orang lain",
+      "raters": "Penilai"
+    },
+    "sortBy": "Urutkan menurut {{col}}",
+    "gapHigh": "Menilai diri lebih tinggi",
+    "gapLow": "Menilai diri lebih rendah",
+    "gapEven": "Selaras",
+    "raters_one": "{{count}} penilai",
+    "raters_other": "{{count}} penilai",
+    "unrankedTitle": "Belum diperingkat",
+    "unrankedHelp": "Respons dari orang lain kurang dari {{min}}, jadi belum ada skor yang bisa diperingkat tanpa membuka identitas penilai.",
+    "notYet": "Peringkat muncul setelah siklus ini ditutup.",
+    "empty": "Belum ada peserta di siklus ini dengan respons yang cukup untuk diperingkat.",
+    "how": "Skor adalah rata-rata penilaian dari atasan dan setiap kelompok anonim dengan minimal {{min}} respons, skala 1–5. Penilaian diri ditampilkan sebagai pembanding dan tidak ikut menentukan peringkat.",
+    "private": "Peringkat hanya terlihat oleh admin dan manager. Gunakan untuk membuka percakapan, bukan satu-satunya dasar keputusan.",
+    "homeTitle": "Peringkat terbaru",
+    "homeEmpty": "Peringkat muncul di sini setelah siklus ditutup.",
+    "tooltip": "{{name}}: {{score}} dari orang lain · diri {{self}} · {{raters}}"
   }
 }

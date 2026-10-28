@@ -609,5 +609,53 @@
         "body": "Once released, compare your self-view with how others see you, skill by skill, and find blind spots and hidden strengths."
       }
     }
+  },
+  "ranking": {
+    "title": "Ranking",
+    "eyebrow": "360° ranking",
+    "back": "Back to cycle",
+    "open": "View ranking",
+    "openFull": "See full ranking",
+    "scope": {
+      "org": "Whole organization",
+      "team": "Your team"
+    },
+    "basis": "Rank by",
+    "overall": "Overall",
+    "statRanked": "People ranked",
+    "statRankedOf": "of {{total}}",
+    "statAvg": "Average score",
+    "statTop": "Highest",
+    "statBottom": "Lowest",
+    "top": "Top {{count}}",
+    "bottom": "Bottom {{count}}",
+    "order": "Ranking",
+    "all": "Everyone",
+    "legendScore": "Score from others",
+    "legendSelf": "Self-rating",
+    "legendAvg": "Average",
+    "col": {
+      "rank": "#",
+      "name": "Name",
+      "score": "Score",
+      "self": "Self",
+      "gap": "Self − others",
+      "raters": "Raters"
+    },
+    "sortBy": "Sort by {{col}}",
+    "gapHigh": "Rates self higher",
+    "gapLow": "Rates self lower",
+    "gapEven": "In line",
+    "raters_one": "{{count}} rater",
+    "raters_other": "{{count}} raters",
+    "unrankedTitle": "Not ranked yet",
+    "unrankedHelp": "Fewer than {{min}} responses from others, so there is no score to rank without exposing who answered.",
+    "notYet": "The ranking appears once this cycle is closed.",
+    "empty": "No one in this cycle has enough responses to rank yet.",
+    "how": "Scores are the average rating from the manager and every anonymous group with at least {{min}} responses, on a 1–5 scale. Self-ratings are shown for comparison but never count toward the rank.",
+    "private": "Only admins and managers can see rankings. Use them to start conversations, not as the only basis for decisions.",
+    "homeTitle": "Latest ranking",
+    "homeEmpty": "Rankings appear here when a cycle closes.",
+    "tooltip": "{{name}}: {{score}} from others · self {{self}} · {{raters}}"
   }
 }
